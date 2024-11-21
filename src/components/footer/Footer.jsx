@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faYoutube, faGithub } from '@fortawesome/free-brands-svg-icons';
 import './Footer.css';
-import logoImage from '../../img/Logo-header.png';
+
 
 function Footer() {
   const [showPrivacyMenu, setShowPrivacyMenu] = useState(false);
@@ -15,11 +15,7 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="container">
-        <div className="container-box">
-          <Link to="/home">
-            <img src={logoImage} alt="footer-logo" className="footer-logo" />
-          </Link>
-        </div>
+        
         <div className="container-box">
           <ul className="social">
             <li>
@@ -61,10 +57,10 @@ function Footer() {
         </div>
       </div>
       <div className="copyright">
-        © 2024 RODENTPOCALYPSE Todos los derechos reservados 
+        © 2024 FAKESTIVAL Todos los derechos reservados 
         <Link to="#" onClick={togglePrivacyMenu}>Política de Privacidad y Cookies</Link> | 
         <Link to="#">Condiciones de Venta</Link> | 
-        <Link to="/rss">Suscríbete a nuestro RSS</Link>
+        <Link to="#">Suscríbete a nuestro RSS</Link>
 
       </div>
       {showPrivacyMenu && (
