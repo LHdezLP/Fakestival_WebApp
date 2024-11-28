@@ -1,17 +1,45 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
 
+@font-face {
+  font-family: "MetalMania";
+  src: url("/fonts/MetalMania-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Oswald";
+  src: url("/fonts/Oswald-Light.ttf") format("truetype"),
+    url("/fonts/Oswald-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Oswald";
+  src: url("/fonts/Oswald-Bold.ttf") format("truetype"),
+    url("/fonts/Oswald-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+body {
+  font-family: "Oswald", sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  --bs-link-color-rgb: 255, 255, 255;
+  --bs-link-opacity: 0.8;
 
-  
   color: rgba(255, 255, 255, 0.87);
-
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -19,21 +47,20 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
-  overflow-x: hidden; /* Asegura que no haya desbordamiento horizontal */
+  overflow-x: hidden;
 }
 
 body {
-  background: linear-gradient(to bottom, #3A415F 2%, #191E34 28%);
-  min-height: 100%;  /* Garantiza que el fondo cubra todo el contenido */
+  background: linear-gradient(to bottom, #3a415f 2%, #191e34 28%);
+  min-height: 100%;
+
   display: flex;
   flex-direction: column;
-  margin-bottom: 0; /* Evita márgenes adicionales que podrían interferir */
+  margin-bottom: 0;
 }
-
-
-

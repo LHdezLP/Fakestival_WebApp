@@ -15,7 +15,7 @@ function NavBar() {
 
         
         <div className="logo d-flex align-items-center" style={{ textAlign: "center" }}>
-          <a href="/home"><img src="src\img\skull-logo.png" alt="Logo" style={{ height: "40px", margin: "2px" }} /></a>
+          <a href="/home"><img src="/img\skull-logo.png" alt="Logo" style={{ height: "40px", margin: "2px" }} /></a>
           <span className="navbar-text " style={{ fontSize: "30px", fontFamily: "MetalMania, sans-serif", lineHeight: "40px", color: "RGB(239, 176, 98)" }}>Fakestival</span>
         </div>
 

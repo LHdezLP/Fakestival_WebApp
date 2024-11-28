@@ -1,0 +1,26 @@
+
+.header {
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    height: fit-content;
+  }
+  
+  .lineup-wrapper {
+    margin-top: 56px;
+    margin-bottom: 61px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+  }
+  
+  
+  
+  
+
+  footer {
+    width: 100%;
+  }

@@ -8,22 +8,25 @@ function TicketPanel() {
     <>
       <div className="list-container">
         <ul className="ticket-list">
+          
           <li className="ticket-item">
             <div className="ticket-description">
               <span
                 className="ticket-type"
                 style={{
-                  fontSize: "22px",
+                  fontFamily:"Oswald, sans-serif",
+                  fontSize: "18px",
                   fontWeight: "bold",
                   color: "#3A415F",
                 }}
               >
-                Standar Pass 
+                Standar Pass
               </span>
               <span
                 className="ticket-name"
                 style={{
-                  fontSize: "22px",
+                  fontFamily:"Oswald, sans-serif",
+                  fontSize: "18px",
                   fontWeight: "bold",
                   color: "#3A415F",
                 }}
@@ -33,10 +36,10 @@ function TicketPanel() {
             </div>
             <div
               className="counter-container"
-              style={{ display: "flex", alignItems: "center", gap: "10px" }}
+              style={{ display: "flex", alignItems: "center" }}
             >
               <i
-                className="fas fa-circle-minus"
+                className="quitar-entrada fas fa-circle-minus"
                 style={{
                   fontSize: "24px",
                   color: "rgb(239, 176, 98)",
@@ -44,7 +47,7 @@ function TicketPanel() {
                 }}
               ></i>
 
-              <span
+              <span className="counter-number"
                 style={{
                   fontSize: "22px",
                   fontWeight: "bold",
@@ -55,7 +58,7 @@ function TicketPanel() {
               </span>
 
               <i
-                className="fas fa-circle-plus"
+                className=" añadir-entrada fas fa-circle-plus"
                 style={{
                   fontSize: "24px",
                   color: "rgb(239, 176, 98)",
@@ -70,30 +73,32 @@ function TicketPanel() {
               <span
                 className="ticket-type"
                 style={{
-                  fontSize: "22px",
+                  fontFamily:"Oswald, sans-serif",
+                  fontSize: "18px",
                   fontWeight: "bold",
                   color: "#3A415F",
                 }}
               >
-                Standar Pass
+                VIP Pass
               </span>
               <span
                 className="ticket-name"
                 style={{
-                  fontSize: "22px",
+                  fontFamily:"Oswald, sans-serif",
+                  fontSize: "18px",
                   fontWeight: "bold",
                   color: "#3A415F",
                 }}
               >
-                | 99.99€
+                | 119.99€
               </span>
             </div>
             <div
               className="counter-container"
-              style={{ display: "flex", alignItems: "center", gap: "10px" }}
+              style={{ display: "flex", alignItems: "center" }}
             >
               <i
-                className="fas fa-circle-minus"
+                className="quitar-entrada fas fa-circle-minus"
                 style={{
                   fontSize: "24px",
                   color: "rgb(239, 176, 98)",
@@ -101,7 +106,7 @@ function TicketPanel() {
                 }}
               ></i>
 
-              <span
+              <span className="counter-number"
                 style={{
                   fontSize: "22px",
                   fontWeight: "bold",
@@ -112,7 +117,7 @@ function TicketPanel() {
               </span>
 
               <i
-                className="fas fa-circle-plus"
+                className=" añadir-entrada fas fa-circle-plus"
                 style={{
                   fontSize: "24px",
                   color: "rgb(239, 176, 98)",
@@ -127,30 +132,32 @@ function TicketPanel() {
               <span
                 className="ticket-type"
                 style={{
-                  fontSize: "22px",
+                  fontFamily:"Oswald, sans-serif",
+                  fontSize: "18px",
                   fontWeight: "bold",
                   color: "#3A415F",
                 }}
               >
-                Standar Pass
+                Premium Pass 
               </span>
               <span
                 className="ticket-name"
                 style={{
-                  fontSize: "22px",
+                  fontFamily:"Oswald, sans-serif",
+                  fontSize: "18px",
                   fontWeight: "bold",
                   color: "#3A415F",
                 }}
               >
-                | 99.99€
+                | 149.99€
               </span>
             </div>
             <div
               className="counter-container"
-              style={{ display: "flex", alignItems: "center", gap: "10px" }}
+              style={{ display: "flex", alignItems: "center" }}
             >
               <i
-                className="fas fa-circle-minus"
+                className="quitar-entrada fas fa-circle-minus"
                 style={{
                   fontSize: "24px",
                   color: "rgb(239, 176, 98)",
@@ -158,7 +165,7 @@ function TicketPanel() {
                 }}
               ></i>
 
-              <span
+              <span className="counter-number"
                 style={{
                   fontSize: "22px",
                   fontWeight: "bold",
@@ -169,7 +176,7 @@ function TicketPanel() {
               </span>
 
               <i
-                className="fas fa-circle-plus"
+                className=" añadir-entrada fas fa-circle-plus"
                 style={{
                   fontSize: "24px",
                   color: "rgb(239, 176, 98)",
@@ -181,21 +188,20 @@ function TicketPanel() {
         </ul>
 
         <div className="proceed-buttom">
-            <div className="ticket-description">
-              <span
-                className="ticket-type"
-                style={{
-                  fontSize: "24px",
-                  fontWeight: "bold",
-                  color: "#3A415F",
-                }}
-              >
-                PROCEED
-              </span>
-              
-            </div>
-            
+          <div className="ticket-description">
+            <span
+              className="ticket-type"
+              style={{
+                fontFamily:"Oswald, sans-serif",
+                fontSize: "24px",
+                fontWeight: "bold",
+                color: "#3A415F",
+              }}
+            >
+              PROCEED
+            </span>
           </div>
+        </div>
       </div>
     </>
   );

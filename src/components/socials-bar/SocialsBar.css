@@ -1,0 +1,32 @@
+
+
+
+.social-container{
+
+}
+.social-list-container{
+    background-color: RGB(239, 176, 98, 0.2);
+    border-radius: 5rem;
+    height: fit-content;
+    width: 15rem;
+    height: fit-content;
+}
+.social-icon-list{
+   
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 0.25rem;
+
+}
+
+ .social-icon{
+    color: RGB(239, 176, 98);
+    font-size: 25px;
+    
+}
+
+
+

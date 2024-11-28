@@ -1,0 +1,25 @@
+* {
+    background: transparent;
+}
+
+
+
+.card {
+    background-color: transparent;
+}
+
+
+.card-title {
+
+    font-family: Oswald, sans-serif;
+    color: RGB(239, 176, 98);
+}
+
+.card-text {
+
+    font-family: Oswald, sans-serif;
+}
+
+.card-title, .card-text{
+    color: antiquewhite;
+}
