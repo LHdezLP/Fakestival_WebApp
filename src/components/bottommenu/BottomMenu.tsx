@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome, faClock, faStore, faBars } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faClock, faStore, faBars, faTicket } from "@fortawesome/free-solid-svg-icons";
 import { faSpotify } from "@fortawesome/free-brands-svg-icons";
 import './BottomMenu.css';
 import React from 'react';
@@ -43,7 +43,7 @@ function BottomMenu() {
 
                 <div className="icon" style={{ marginTop: "5px" }}>
                     <a href="/tickets">
-                        <FontAwesomeIcon icon={faStore} style={{ fontSize: "35px", color: "RGB(239, 176, 98)", margin: "10px" }} />
+                        <FontAwesomeIcon icon={faTicket} style={{ fontSize: "35px", color: "RGB(239, 176, 98)", margin: "10px" }} />
                     </a>
                 </div>
 

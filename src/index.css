@@ -3,6 +3,11 @@
   padding: 0;
 }
 
+a {
+  color:  RGB(239, 176, 98) !important; 
+  text-decoration: none !important; 
+}
+
 @font-face {
   font-family: "MetalMania";
   src: url("/fonts/MetalMania-Regular.ttf") format("truetype");

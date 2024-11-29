@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import "./BandCard.css"; 
 
 function BandCard({ previewImage, title }) {
