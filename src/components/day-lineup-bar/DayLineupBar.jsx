@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import "./DayLineupBar.css";
 
-function DayLineupBar({ currentDay, changeDay }) {
+function DayLineupBar({  changeDay }) {
   return (
     <>
       <div className="bar-container">
@@ -37,7 +37,7 @@ function DayLineupBar({ currentDay, changeDay }) {
               padding: "0 5px",
             }}
           >
-            {currentDay ? currentDay.day : "Cargando..."}
+            Cambia de Fecha
           </h5>
           <i
             className="flecha-derecha fa-solid fa-circle-arrow-right"

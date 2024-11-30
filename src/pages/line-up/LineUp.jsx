@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import BottomMenu from "../../components/bottommenu/BottomMenu";
 import DayLineupBar from "../../components/day-lineup-bar/DayLineupBar";
@@ -12,7 +13,6 @@ function LineUp() {
   const [currentDayId, setCurrentDayId] = useState(1); 
   const [loading, setLoading] = useState(true);
 
-  
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -28,7 +28,6 @@ function LineUp() {
         const bandsData = await bandsResponse.json();
         const daysData = await daysResponse.json();
 
-        
         const sortedBands = bandsData.sort((a, b) =>
           a["start-time"].localeCompare(b["start-time"])
         );
@@ -45,18 +44,12 @@ function LineUp() {
     fetchData();
   }, []);
 
-  
   const changeDay = (direction) => {
     setCurrentDayId((prev) => {
       const newDayId = prev + direction;
       return newDayId < 1 ? days.length : newDayId > days.length ? 1 : newDayId;
     });
   };
-
-  
-  const filteredBands = bands.filter(
-    (band) => band["playing-day"] === currentDayId.toString()
-  );
 
   if (loading) {
     return <div>Cargando datos...</div>;
@@ -75,22 +68,33 @@ function LineUp() {
           />
         </div>
 
-        
-        {filteredBands.map((band) => (
-          <div className="band-schedule-container" key={band.id}>
-            <LineupCards
-              previewImage={band["preview-image"]}
-              title={band.title}
-              stage={band.stage}
-              startTime={band["start-time"]}
-              endTime={band["end-time"]}
-            />
-          </div>
-        ))}
-
+        <div className="lineup-cards-grid">
+          {days.map((day) => (
+            <div
+              className={`day-column ${
+                currentDayId.toString() === day.id ? "active" : ""
+              }`}
+              key={day.id}
+            >
+              <h4 className="day-title" style={{fontFamily:"MetalMania, sans-serif", color:"RGB(239, 176, 98)"}}>{day.day}</h4>
+              {bands
+                .filter((band) => band["playing-day"] === day.id.toString())
+                .map((band) => (
+                  <div className="band-schedule-container" key={band.id}>
+                    <LineupCards
+                      previewImage={band["preview-image"]}
+                      title={band.title}
+                      stage={band.stage}
+                      startTime={band["start-time"]}
+                      endTime={band["end-time"]}
+                    />
+                  </div>
+                ))}
+            </div>
+          ))}
+        </div>
         <Footer />
       </div>
-
       <div className="bottom-menu">
         <BottomMenu />
       </div>
