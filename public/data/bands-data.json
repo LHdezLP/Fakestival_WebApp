@@ -6,15 +6,33 @@
     "title": "PARKWAY DRIVE",
     "text": "Parkway Drive es una banda australiana de metalcore procedente de Byron Bay, Nueva Gales del Sur, Australia. Fue formada en 2003. Hasta 2022, Parkway Drive ha lanzado siete álbumes: Killing with a Smile, Horizons, Deep Blue, Atlas, IRE, Reverence y su reciente álbum Darker Still; además de un EP, dos DVD y un libro; Ten Years of Parkway Drive. Varios de sus álbumes alcanzaron el puesto más alto en el top 10 de la Australian ARIA Graphic. Al día de hoy (2019) la banda australiana encabeza más de un festival, entre los más grandes W:O:A y Resurrection Fest.",
     "stage": "Main Stage",
-    "start-time": "",
-    "end-time":"",
-    "playing-day":"1"
+    "start-time": "20:00",
+    "end-time": "20:55",
+    "playing-day": "1",
+    "social-links": {
+      "instagram": "https://www.instagram.com/parkwaydriveofficial/",
+      "twitter": "https://twitter.com/parkwayofficial",
+      "spotify": "https://open.spotify.com/artist/2ye2Wgw4gimLv2eAKyk1NB",
+      "facebook": "https://www.facebook.com/parkwaydrive",
+      "wikipedia": "https://en.wikipedia.org/wiki/Parkway_Drive"
+    }
   },
   {
     "id": "linkin-park",
     "panel-image": "/img/Lead_Press_Photo_-_James_Minchin_III.jpg",
     "preview-image": "/img/maxresdefault.jpg",
     "title": "LINKIN PARK",
+    "stage": "Main Stage",
+    "playing-day": "1",
+    "start-time": "19:00",
+    "end-time": "19:55",
+    "social-links": {
+      "instagram": "https://www.instagram.com/linkinpark/",
+      "twitter": "https://twitter.com/linkinpark",
+      "spotify": "https://open.spotify.com/artist/2ye2Wgw4gimLv2eAKyk1NB",
+      "facebook": "https://en.wikipedia.org/wiki/Linkin_Park",
+      "wikipedia": "https://en.wikipedia.org/wiki/Parkway_Drive"
+    },
     "text": "Linkin Park es una banda estadounidense de rock procedente de Agoura Hills, California, formada en 1996. Está integrada por el vocalista, compositor y guitarrista rítmico Mike Shinoda, el bajista Dave Farrell, el DJ Joe Hahn, el guitarrista principal Brad Delson, el baterista Colin Brittain, y la vocalista y compositora Emily Armstrong. En 2024, el grupo anunció la incorporación de Armstrong como nueva vocalista tras el fallecimiento de Chester Bennington en 2017, y Brittain como nuevo baterista en reemplazo de Rob Bourdon."
   },
   {
@@ -22,26 +40,337 @@
     "panel-image": "/img/imminence-promo-web.jpg",
     "preview-image": "/img/imminence-promo-web.jpg",
     "title": "IMMINENCE",
+    "stage": "Main Stage",
+    "playing-day": "1",
+    "start-time": "18:00",
+    "end-time": "18:55",
+    "social-links": {
+      "instagram": "https://www.instagram.com/imminenceswe",
+      "twitter": "https://twitter.com/imminenceswe",
+      "spotify": "https://open.spotify.com/artist/2ye2Wgw4gimLv2eAKyk1NB",
+      "facebook": "https://www.facebook.com/imminenceswe",
+      "wikipedia": "https://en.wikipedia.org/wiki/Parkway_Drive"
+    },
     "text": "Imminence is a Swedish metalcore band formed in Trelleborg in 2009. The group consists of vocalist Eddie Berg, lead guitarist Harald Barrett, rhythm guitarist Alex Arnoldsson, bassist Christian Höijer and drummer Peter Hanström. They have released five studio albums. Their most recent studio album, The Black, was released on 12 April 2024."
   },
   {
     "id": "racoon-rodent",
     "panel-image": "/img/racoon.jpeg",
     "preview-image": "/img/racoon.jpeg",
-    "title": "PARKWAY DRIVE",
+    "title": "RACOON MASTERS",
     "text": "Parkway Drive es una banda australiana de metalcore procedente de Byron Bay, Nueva Gales del Sur, Australia. Fue formada en 2003. Hasta 2022, Parkway Drive ha lanzado siete álbumes: Killing with a Smile, Horizons, Deep Blue, Atlas, IRE, Reverence y su reciente álbum Darker Still; además de un EP, dos DVD y un libro; Ten Years of Parkway Drive. Varios de sus álbumes alcanzaron el puesto más alto en el top 10 de la Australian ARIA Graphic. Al día de hoy (2019) la banda australiana encabeza más de un festival, entre los más grandes W:O:A y Resurrection Fest.",
     "stage": "Main Stage",
-    "start-time": "",
-    "end-time":""
+    "playing-day": "1",
+    "start-time": "17:00",
+    "end-time": "17:55",
+    "social-links": {
+      "instagram": "https://www.instagram.com/parkwaydriveofficial/",
+      "twitter": "https://twitter.com/parkwayofficial",
+      "spotify": "https://open.spotify.com/artist/2ye2Wgw4gimLv2eAKyk1NB",
+      "facebook": "https://www.facebook.com/parkwaydrive",
+      "wikipedia": "https://en.wikipedia.org/wiki/Parkway_Drive"
+    }
   },
   {
-    "id": "ratty-rodent",
+    "id": "the-rattlesnakes",
     "panel-image": "/img/rata.jpeg",
     "preview-image": "/img/rata.jpeg",
-    "title": "PARKWAY DRIVE",
+    "title": "THE RATTLESNAKES",
     "text": "Parkway Drive es una banda australiana de metalcore procedente de Byron Bay, Nueva Gales del Sur, Australia. Fue formada en 2003. Hasta 2022, Parkway Drive ha lanzado siete álbumes: Killing with a Smile, Horizons, Deep Blue, Atlas, IRE, Reverence y su reciente álbum Darker Still; además de un EP, dos DVD y un libro; Ten Years of Parkway Drive. Varios de sus álbumes alcanzaron el puesto más alto en el top 10 de la Australian ARIA Graphic. Al día de hoy (2019) la banda australiana encabeza más de un festival, entre los más grandes W:O:A y Resurrection Fest.",
     "stage": "Main Stage",
-    "start-time": "",
-    "end-time":""
+    "playing-day": "1",
+    "start-time": "16:00",
+    "end-time": "16:55",
+    "social-links": {
+      "instagram": "https://www.instagram.com/parkwaydriveofficial/",
+      "twitter": "https://twitter.com/parkwayofficial",
+      "spotify": "https://open.spotify.com/artist/2ye2Wgw4gimLv2eAKyk1NB",
+      "facebook": "https://www.facebook.com/parkwaydrive",
+      "wikipedia": "https://en.wikipedia.org/wiki/Parkway_Drive"
+    }
+  },
+  {
+    "id": "bury-tomorrow",
+    "panel-image": "/img/burytomorrow.jpg",
+    "preview-image": "/img/bury-tomorrow-preview.jpg",
+    "title": "BURY TOMORROW",
+    "text": "Bury Tomorrow are a British metalcore band formed in 2006 in Southampton, Hampshire, England. The band is composed of six members; lead vocalist Daniel Winter-Bates, bassist Davyd Winter-Bates, drummer Adam Jackson, lead guitarist Kristan Dawson, who replaced founding guitarist Mehdi Vismara in 2013, rhythm guitarist Ed Hartwell, and keyboardist and vocalist Tom Prendergast, who both replaced Jason Cameron in 2021. Bury Tomorrow have released seven studio albums, their most recent being The Seventh Sun, released on 31 March 2023.",
+    "stage": "Main Stage",
+    "start-time": "21:00",
+    "end-time": "21:55",
+    "playing-day": "1",
+    "social-links": {
+      "instagram": "https://www.instagram.com/burytomorrow",
+      "twitter": "https://twitter.com/burytomorrow",
+      "spotify": "https://open.spotify.com/artist/2ye2Wgw4gimLv2eAKyk1NB",
+      "facebook": "https://www.facebook.com/BuryTomorrow",
+      "wikipedia": "https://en.wikipedia.org/wiki/Parkway_Drive"
+    }
+  },
+
+  {
+    "id": "metallica",
+    "panel-image": "/img/Metallica-Streaming-Foto-Archivo.webp",
+    "preview-image": "/img/metallica-preview.webp",
+    "title": "METALLICA",
+    "text": "Metallica es una banda estadounidense de heavy metal2​ fundada en 1981 en Los Ángeles, aunque ha estado radicada en San Francisco durante la mayor parte de su carrera.3​ Está integrada por el vocalista y guitarrista rítmico James Hetfield, el baterista Lars Ulrich, el guitarrista líder Kirk Hammet, y el bajista Robert Trujillo. Metallica es considerada como una de las bandas comercialmente más exitosas de todos los tiempos, habiendo vendido más de 125 millones de álbumes en todo el mundo.",
+    "stage": "Main Stage",
+    "start-time": "22:00",
+    "end-time": "22:55",
+    "playing-day": "1",
+    "social-links": {
+      "instagram": "https://www.instagram.com/metallica/",
+      "twitter": "https://twitter.com/Metallica",
+      "spotify": "https://open.spotify.com/artist/2ye2Wgw4gimLv2eAKyk1NB",
+      "facebook": "https://www.facebook.com/Metallica",
+      "wikipedia": "https://en.wikipedia.org/wiki/Metallica"
+    }
+  },
+
+  {
+    "id": "slipknot",
+    "panel-image": "/img/Slipknot-panel.webp",
+    "preview-image": "/img/slipknot-preview.jpg",
+    "title": "SLIPKNOT",
+    "text": "Slipknot is an American heavy metal band formed in Des Moines, Iowa, in 1995 by percussionist Shawn Crahan, former vocalist Anders Colsefni and bassist Paul Gray.[1] After several lineup changes in its early years, the band settled on nine members for more than a decade: Crahan, Gray, Joey Jordison, Craig Jones, Mick Thomson, Corey Taylor, Sid Wilson, Chris Fehn, and Jim Root. Slipknot is well known for its attention-grabbing image, aggressive style of music, and energetic and chaotic live shows.",
+    "stage": "Main Stage",
+    "start-time": "16:00",
+    "end-time": "16:55",
+    "playing-day": "2"
+  },
+  {
+    "id": "trivium",
+    "panel-image": "/img/trivium_panel.jpeg",
+    "preview-image": "/img/trivium-preview.webp",
+    "title": "TRIVIUM",
+    "text": "Trivium is an American heavy metal band from Orlando, Florida, formed in 1999.[1] The band comprises vocalist and guitarist Matt Heafy, guitarist Corey Beaulieu, bassist Paolo Gregoletto, and drummer Alex Bent. The band's debut album Ember to Inferno was their only album released through Lifeforce Records in 2003.",
+    "stage": "Main Stage",
+    "start-time": "17:00",
+    "end-time": "17:55",
+    "social-links": {
+      "instagram": "https://www.instagram.com/parkwaydriveofficial/",
+      "twitter": "https://twitter.com/parkwayofficial",
+      "spotify": "https://open.spotify.com/artist/2ye2Wgw4gimLv2eAKyk1NB",
+      "facebook": "https://www.facebook.com/parkwaydrive",
+      "wikipedia": "https://en.wikipedia.org/wiki/Parkway_Drive"
+    },
+    "playing-day": "2"
+  },
+  {
+    "id": "avenged-sevenfold",
+    "panel-image": "/img/A7x-panel.png",
+    "preview-image": "/img/Avenged-Sevenfold-preview.jpg",
+    "title": "AVENGED SEVENFOLD",
+    "text": "Avenged Sevenfold (abbreviated as A7X) is an American heavy metal band from Huntington Beach, California, formed in 1999. The band's current lineup consists of vocalist M. Shadows, rhythm guitarist Zacky Vengeance, lead guitarist Synyster Gates, bassist Johnny Christ, and drummer Brooks Wackerman.",
+    "stage": "Main Stage",
+    "start-time": "18:00",
+    "end-time": "18:55",
+    "social-links": {
+      "instagram": "https://www.instagram.com/parkwaydriveofficial/",
+      "twitter": "https://twitter.com/parkwayofficial",
+      "spotify": "https://open.spotify.com/artist/2ye2Wgw4gimLv2eAKyk1NB",
+      "facebook": "https://www.facebook.com/parkwaydrive",
+      "wikipedia": "https://en.wikipedia.org/wiki/Parkway_Drive"
+    },
+    "playing-day": "2"
+  },
+  {
+    "id": "bring-me-the-horizon",
+    "panel-image": "/img/BMTH-panel.jpg",
+    "preview-image": "/img/bringme-preview.jpg",
+    "title": "BRING ME THE HORIZON",
+    "text": "Bring Me the Horizon are a British rock band, formed in Sheffield in 2004. The group currently consists of lead vocalist Oli Sykes, drummer Matt Nicholls, guitarist Lee Malia and bassist Matt Kean. They are signed to RCA Records globally and Columbia Records exclusively in the United States.",
+    "stage": "Main Stage",
+    "start-time": "19:00",
+    "end-time": "19:55",
+    "social-links": {
+      "instagram": "https://www.instagram.com/parkwaydriveofficial/",
+      "twitter": "https://twitter.com/parkwayofficial",
+      "spotify": "https://open.spotify.com/artist/2ye2Wgw4gimLv2eAKyk1NB",
+      "facebook": "https://www.facebook.com/parkwaydrive",
+      "wikipedia": "https://en.wikipedia.org/wiki/Parkway_Drive"
+    },
+    "playing-day": "2"
+  },
+  {
+    "id": "bullet-for-my-valentine",
+    "panel-image": "/img/bullet-panel.jpg",
+    "preview-image": "/img/bullet-preview.jpg",
+    "title": "BULLET FOR MY VALENTINE",
+    "text": "Bullet for My Valentine, often abbreviated as BFMV, are a Welsh heavy metal band from Bridgend, formed in 1998. The band is currently composed of Matthew Tuck (vocals, rhythm guitar), Michael Paget (lead guitar), Jason Bowld (drums) and Jamie Mathias (bass). Former members include Michael Thomas, Jason James and Nick Crandle; the latter were on bass. They were formed under the name Jeff Killed John and started their music career by covering songs by Metallica and Nirvana. Jeff Killed John recorded six songs which were not released; two of these tracks were reworked later in their career as Bullet for My Valentine. A change of style from that of Jeff Killed John led the band to change their name. In 2002, the band secured a five-album deal with Sony BMG. The band has stated that their music is influenced by classic metal acts such as Metallica, Iron Maiden and Slayer. The band is part of the Cardiff music scene.",
+    "stage": "Main Stage",
+    "start-time": "20:00",
+    "end-time": "20:55",
+    "social-links": {
+      "instagram": "https://www.instagram.com/parkwaydriveofficial/",
+      "twitter": "https://twitter.com/parkwayofficial",
+      "spotify": "https://open.spotify.com/artist/2ye2Wgw4gimLv2eAKyk1NB",
+      "facebook": "https://www.facebook.com/parkwaydrive",
+      "wikipedia": "https://en.wikipedia.org/wiki/Parkway_Drive"
+    },
+    "playing-day": "2"
+  },
+  {
+    "id": "gojira",
+    "panel-image": "/img/gojira-panel.webp",
+    "preview-image": "/img/gojira-preview.jpg",
+    "title": "GOJIRA",
+    "text": "Gojira is a French heavy metal band from Ondres. Founded as Godzilla in 1996, the band's lineup—brothers Joe (lead vocals, rhythm and lead guitar) and Mario Duplantier (drums), Christian Andreu (lead and rhythm guitar), and Jean-Michel Labadie (bass)—has been the same since the band changed its name to Gojira in 2001. Gojira has been known for its progressive and technical death metal styles and spiritual, philosophical, and environmentally themed lyrics. The band has gone from the utmost obscurity during the first half of their career to widespread global recognition in the second.",
+    "stage": "Main Stage",
+    "start-time": "21:00",
+    "end-time": "21:55",
+    "social-links": {
+      "instagram": "https://www.instagram.com/parkwaydriveofficial/",
+      "twitter": "https://twitter.com/parkwayofficial",
+      "spotify": "https://open.spotify.com/artist/2ye2Wgw4gimLv2eAKyk1NB",
+      "facebook": "https://www.facebook.com/parkwaydrive",
+      "wikipedia": "https://en.wikipedia.org/wiki/Parkway_Drive"
+    },
+    "playing-day": "2"
+  },
+  {
+    "id": "iron-maiden",
+    "panel-image": "/img/Iron-Maiden-panel.jpeg",
+    "preview-image": "/img/maiden-preview.jpg",
+    "title": "IRON MAIDEN",
+    "text": "Iron Maiden are an English heavy metal band formed in Leyton, East London, in 1975 by bassist and primary songwriter Steve Harris. Although fluid in the early years of the band, the line-up for most of the band's history has consisted of Harris, lead vocalist Bruce Dickinson, drummer Nicko McBrain, and guitarists Dave Murray, Adrian Smith and Janick Gers. As pioneers of the new wave of British heavy metal movement, Iron Maiden released a series of UK and US Platinum and Gold albums, including 1980's debut album, 1981's Killers, and 1982's The Number of the Beast – its first album with Bruce Dickinson, who in 1981 replaced Paul Di'Anno as lead singer. The addition of Dickinson was a turning point in their career, establishing them as one of heavy metal's most important bands. The Number of the Beast is among the most popular heavy metal albums of all time, having sold almost 20 million copies worldwide.",
+    "stage": "Main Stage",
+    "start-time": "22:00",
+    "end-time": "22:55",
+    "social-links": {
+      "instagram": "https://www.instagram.com/parkwaydriveofficial/",
+      "twitter": "https://twitter.com/parkwayofficial",
+      "spotify": "https://open.spotify.com/artist/2ye2Wgw4gimLv2eAKyk1NB",
+      "facebook": "https://www.facebook.com/parkwaydrive",
+      "wikipedia": "https://en.wikipedia.org/wiki/Parkway_Drive"
+    },
+    "playing-day": "2"
+  },
+
+  {
+    "id": "architects",
+    "panel-image": "/img/architects-panel.avif",
+    "preview-image": "/img/Architects-preview.jpg",
+    "title": "ARCHITECTS",
+    "text": "Architects are a British metalcore band from Brighton, East Sussex, formed in 2004 by twin brothers Dan and Tom Searle. The band now consists of Dan Searle on drums, Sam Carter on vocals, Alex Dean on bass, and Adam Christianson on guitar. They have been signed to Epitaph Records since 2013.",
+    "stage": "Main Stage",
+    "start-time": "16:00",
+    "end-time": "16:55",
+    "social-links": {
+      "instagram": "https://www.instagram.com/parkwaydriveofficial/",
+      "twitter": "https://twitter.com/parkwayofficial",
+      "spotify": "https://open.spotify.com/artist/2ye2Wgw4gimLv2eAKyk1NB",
+      "facebook": "https://www.facebook.com/parkwaydrive",
+      "wikipedia": "https://en.wikipedia.org/wiki/Parkway_Drive"
+    },
+    "playing-day": "3"
+  },
+  {
+    "id": "spiritbox",
+    "panel-image": "/img/spiritbox-panel.jpg",
+    "preview-image": "/img/Spiritbox-preview.webp",
+    "title": "SPIRITBOX",
+    "text": "Spiritbox is a Canadian heavy metal band, originally from Victoria, British Columbia, publicly established by guitarist Mike Stringer and vocalist Courtney LaPlante in October 2017. The band's full lineup comprises married couple LaPlante and Stringer alongside drummer Zev Rose, and bassist Josh Gilbert. The band's style incorporates electronic elements and draws from a variety of influences, crossing multiple metal subgenres with its roots in metalcore and progressive metal. Their music is currently released through their label, Pale Chord, via a partnership with Rise Records.",
+    "stage": "Main Stage",
+    "start-time": "17:00",
+    "end-time": "17:55",
+    "social-links": {
+      "instagram": "https://www.instagram.com/parkwaydriveofficial/",
+      "twitter": "https://twitter.com/parkwayofficial",
+      "spotify": "https://open.spotify.com/artist/2ye2Wgw4gimLv2eAKyk1NB",
+      "facebook": "https://www.facebook.com/parkwaydrive",
+      "wikipedia": "https://en.wikipedia.org/wiki/Parkway_Drive"
+    },
+    "playing-day": "3"
+  },
+  {
+    "id": "lamb-of-god",
+    "panel-image": "/img/lamb-of-god-panel.jpg",
+    "preview-image": "/img/lamb-of-god-preview.jpg",
+    "title": "LAMB OF GOD",
+    "text": "Lamb of God is an American heavy metal band from Richmond, Virginia. Formed in 1994 as Burn the Priest, the group consists of bassist John Campbell, vocalist Randy Blythe, guitarists Mark Morton and Willie Adler, and drummer Art Cruz. The band is considered a significant member of the new wave of American heavy metal movement.",
+    "stage": "Main Stage",
+    "start-time": "18:00",
+    "end-time": "18:55",
+    "social-links": {
+      "instagram": "https://www.instagram.com/parkwaydriveofficial/",
+      "twitter": "https://twitter.com/parkwayofficial",
+      "spotify": "https://open.spotify.com/artist/2ye2Wgw4gimLv2eAKyk1NB",
+      "facebook": "https://www.facebook.com/parkwaydrive",
+      "wikipedia": "https://en.wikipedia.org/wiki/Parkway_Drive"
+    },
+    "playing-day": "3"
+  },
+  {
+    "id": "sleep-token",
+    "panel-image": "/img/Sleep-Token-panel.jpg",
+    "preview-image": "/img/st-preview.jpg",
+    "title": "SLEEP TOKEN",
+    "text": "Sleep Token are a British metal band from London, formed in 2016. The group are an anonymous, masked collective led by a frontman using the moniker Vessel. They have been categorised under many different genres, including alternative metal, post-rock/metal, progressive metal, indie rock/pop, and djent. After self-releasing their debut extended play (EP) One in 2016, the band signed with Basick Records and issued a follow-up, Two, the next year. The group later signed with Spinefarm Records and released their debut full-length album Sundowning in 2019, which was followed in 2021 by This Place Will Become Your Tomb. A third album, Take Me Back to Eden, was released in May 2023.",
+    "stage": "Main Stage",
+    "start-time": "19:00",
+    "end-time": "19:55",
+    "social-links": {
+      "instagram": "https://www.instagram.com/parkwaydriveofficial/",
+      "twitter": "https://twitter.com/parkwayofficial",
+      "spotify": "https://open.spotify.com/artist/2ye2Wgw4gimLv2eAKyk1NB",
+      "facebook": "https://www.facebook.com/parkwaydrive",
+      "wikipedia": "https://en.wikipedia.org/wiki/Parkway_Drive"
+    },
+    "playing-day": "3"
+  },
+  {
+    "id": "in-flames",
+    "panel-image": "/img/InFlames_panel.jpg",
+    "preview-image": "/img/inflames+group_preview.jpg",
+    "title": "IN FLAMES",
+    "text": "In Flames is a Swedish heavy metal band, formed by guitarist Jesper Strömblad in Gothenburg in 1990 out of the Swedish death metal scene. Their lineup has changed several times, with vocalist Anders Fridén and guitarist Björn Gelotte being the only consistent members since 1995. In Flames helped pioneer melodic death metal along with fellow Swedish bands At the Gates and Dark Tranquillity. The band has sold over two million records worldwide.",
+    "stage": "Main Stage",
+    "start-time": "20:00",
+    "end-time": "20:55",
+    "social-links": {
+      "instagram": "https://www.instagram.com/parkwaydriveofficial/",
+      "twitter": "https://twitter.com/parkwayofficial",
+      "spotify": "https://open.spotify.com/artist/2ye2Wgw4gimLv2eAKyk1NB",
+      "facebook": "https://www.facebook.com/parkwaydrive",
+      "wikipedia": "https://en.wikipedia.org/wiki/Parkway_Drive"
+    },
+    "playing-day": "3"
+  },
+  {
+    "id": "korn",
+    "panel-image": "/img/korn-panel.jpg",
+    "preview-image": "/img/korn-preview.webp",
+    "title": "KORN",
+    "text": "Korn (stylized as KoЯn) is an American nu metal band from Bakersfield, California, originally formed in 1993 by James Munky Shaffer, Reginald Fieldy Arvizu and David Silveria, who were members of the band L.A.P.D. Their current lineup features Shaffer (guitar), Arvizu (bass), Brian Head Welch (guitar), Jonathan Davis (vocals), and Ray Luzier (drums), the last of whom replaced Silveria in 2007. The band is notable for pioneering and popularizing the nu metal genre.",
+    "stage": "Main Stage",
+    "start-time": "21:00",
+    "end-time": "21:55",
+    "social-links": {
+      "instagram": "https://www.instagram.com/parkwaydriveofficial/",
+      "twitter": "https://twitter.com/parkwayofficial",
+      "spotify": "https://open.spotify.com/artist/2ye2Wgw4gimLv2eAKyk1NB",
+      "facebook": "https://www.facebook.com/parkwaydrive",
+      "wikipedia": "https://en.wikipedia.org/wiki/Parkway_Drive"
+    },
+    "playing-day": "3"
+  },
+  {
+    "id": "tool",
+    "panel-image": "/img/tool-panel.png",
+    "preview-image": "/img/tool-preview.png",
+    "title": "TOOL",
+    "text": "Tool is an American rock band formed in Los Angeles in 1990. It consists of vocalist Maynard James Keenan, guitarist Adam Jones, drummer Danny Carey and bassist Justin Chancellor, who replaced founding member Paul D'Amour in 1995. Tool has won four Grammy Awards, performed worldwide tours, and produced albums topping charts in several countries.",
+    "stage": "Main Stage",
+    "start-time": "22:00",
+    "end-time": "22:55",
+    "social-links": {
+      "instagram": "https://www.instagram.com/parkwaydriveofficial/",
+      "twitter": "https://twitter.com/parkwayofficial",
+      "spotify": "https://open.spotify.com/artist/2ye2Wgw4gimLv2eAKyk1NB",
+      "facebook": "https://www.facebook.com/parkwaydrive",
+      "wikipedia": "https://en.wikipedia.org/wiki/Parkway_Drive"
+    },
+    "playing-day": "3"
   }
 ]

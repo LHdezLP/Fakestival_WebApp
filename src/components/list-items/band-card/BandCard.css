@@ -1,7 +1,6 @@
-
 a {
-    color: wheat; 
-    text-decoration: none; 
+    color: wheat;
+    text-decoration: none;
     z-index: 10;
 }
 
@@ -55,20 +54,22 @@ a {
     font-size: 16px;
     margin: 0;
     font-weight: bold;
+    color: aliceblue;
     text-transform: uppercase;
     z-index: 1;
     padding-left: 10px;
 }
 
-.img-container{
+.img-container {
     align-content: flex-end;
     justify-content: center;
     width: 40%;
     height: auto;
 
 }
+
 .artist-image {
-    
+
     object-fit: fill;
     flex-shrink: 0;
     border-left: 1px solid rgba(255, 255, 255, 0.2);
@@ -86,4 +87,144 @@ a {
     z-index: 0;
     pointer-events: none;
 
+}
+
+
+@media (min-width: 1024px) {
+    .bands-list-item {
+        justify-content: center;
+        max-width: 600px;
+        min-width: 300px;
+        height: 300px;
+        margin: 0;
+        background: rgba(19, 19, 20, 0.8) 100%;
+
+    }
+
+    .img-container {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .artist-image {
+        position: relative;
+        height: 1000px;
+        object-fit: cover;
+        top: 0;
+        left: 0;
+        z-index: -2;
+    }
+
+    .artist-description {
+        
+        top: 240px;
+        left: 0;
+        width: 100%;
+        height: 25%;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .artist-name {
+        color: white;
+        font-size: 14px;
+    }
+
+    .artist-type {
+        color: rgb(239, 176, 98);
+        font-size: 14px;
+    }
+
+    .gradient {
+        display: none;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(90deg, rgba(58, 65, 95, 1) 65%, rgba(58, 65, 95, 0) 100%);
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    
+}
+
+@media (min-width: 760px) and (max-width: 1159px) {
+
+    .bands-list-item {
+        justify-content: center;
+        max-width: 300px;
+        min-width: 250px;
+        height: 150px;
+        margin: 0;
+        background: rgba(19, 19, 20, 0.8) 100%;
+
+    }
+
+    .img-container {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .artist-image {
+        position: relative;
+        height: 1000px;
+        object-fit: cover;
+        top: 0;
+        left: 0;
+        z-index: -2;
+    }
+
+    .artist-description {
+        
+        top: 240px;
+        left: 0;
+        width: 100%;
+        height: 25%;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .artist-name {
+        color: white;
+        font-size: 14px;
+    }
+
+    .artist-type {
+        color: rgb(239, 176, 98);
+        font-size: 14px;
+    }
+
+    .gradient {
+        display: none;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(90deg, rgba(58, 65, 95, 1) 65%, rgba(58, 65, 95, 0) 100%);
+        z-index: 0;
+        pointer-events: none;
+    }
 }

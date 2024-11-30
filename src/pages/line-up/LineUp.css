@@ -1,26 +1,70 @@
-
 .header {
-    margin: 0;
-    padding: 0;
-    position: fixed;
-    width: 100%;
-    z-index: 10;
-    height: fit-content;
-  }
-  
-  .lineup-wrapper {
-    margin-top: 56px;
-    margin-bottom: 61px;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    min-height: 100vh;
-  }
-  
-  
-  
-  
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  height: fit-content;
+}
 
-  footer {
-    width: 100%;
+.lineup-wrapper {
+  margin-top: 56px;
+  margin-bottom: 61px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.day-lineup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.lineup-cards-grid {
+  display: flex;
+  flex-direction: column; 
+  gap: 20px;
+}
+
+.day-column {
+  display: none; 
+  flex: 1;
+  padding: 10px;
+}
+
+.day-column.active {
+  display: block; 
+}
+
+.day-title {
+  font-family: "MetalMania, sans-serif";
+  font-size: 24px;
+  color: RGB(239, 176, 98);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.band-schedule-container {
+  margin-bottom: 15px;
+}
+
+/* Estilos para pantallas grandes */
+@media screen and (min-width: 760px) {
+  .lineup-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas iguales */
+    gap: 20px;
   }
+
+  .day-column {
+    display: block; /* Mostrar todas las columnas */
+  }
+
+  .day-column.active {
+    display: block; /* Activo siempre en pantallas grandes */
+  }
+}

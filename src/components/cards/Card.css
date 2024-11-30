@@ -1,11 +1,17 @@
 * {
     background: transparent;
+    box-shadow: none;
 }
 
 
 
 .card {
     background-color: transparent;
+    box-shadow: none;
+}
+
+.card-body{
+    box-shadow: none;
 }
 
 
