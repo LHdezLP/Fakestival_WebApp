@@ -23,8 +23,45 @@ ul {
     border-radius: 8px;
 }
 
-.ticket-item span{
-}
+.ticket-type {
+    font-family: "Oswald, sans-serif";
+    font-size: 18px;
+    font-weight: bold;
+    color: #3A415F;
+  }
+  
+  .ticket-name {
+    font-family: "Oswald, sans-serif";
+    font-size: 18px;
+    font-weight: bold;
+    color: #3A415F;
+  }
+  
+  .counter-number {
+    font-size: 22px;
+    font-weight: bold;
+    color: #3A415F;
+    width: 50px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: "Oswald, sans-serif";
+    -moz-appearance: textfield;
+  }
+  
+  .counter-number::-webkit-inner-spin-button,
+  .counter-number::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+  
+  .quitar-entrada,
+  .añadir-entrada {
+    font-size: 24px;
+    color: rgb(239, 176, 98);
+    cursor: pointer;
+  }
 
 .proceed-buttom{
     padding: 1rem;
@@ -37,6 +74,19 @@ ul {
     border-radius: 8px;
 }
 
-.counter-number{
-    padding: 0px 10px 0px 10px;
+
+
+@media (min-width: 760px) {
+
+    .ticket-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .ticket-panel{
+
+        width: 760px;
+        align-items: center;
+        justify-content: center;
+    }
 }

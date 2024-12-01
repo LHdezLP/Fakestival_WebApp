@@ -4,17 +4,30 @@ import "./TicketPanel.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 function TicketPanel() {
+  const [counts, setCounts] = useState({
+    standard: 0,
+    vip: 0,
+    premium: 0,
+  });
+
+  const handleCounterChange = (type, value) => {
+    setCounts((prev) => {
+      const newValue = Math.min(5, Math.max(0, prev[type] + value));
+      return { ...prev, [type]: newValue };
+    });
+  };
+
   return (
     <>
       <div className="list-container">
         <ul className="ticket-list">
-          
+          {/* Standard Pass */}
           <li className="ticket-item">
             <div className="ticket-description">
               <span
                 className="ticket-type"
                 style={{
-                  fontFamily:"Oswald, sans-serif",
+                  fontFamily: "Oswald, sans-serif",
                   fontSize: "18px",
                   fontWeight: "bold",
                   color: "#3A415F",
@@ -25,7 +38,7 @@ function TicketPanel() {
               <span
                 className="ticket-name"
                 style={{
-                  fontFamily:"Oswald, sans-serif",
+                  fontFamily: "Oswald, sans-serif",
                   fontSize: "18px",
                   fontWeight: "bold",
                   color: "#3A415F",
@@ -34,31 +47,35 @@ function TicketPanel() {
                 | 99.99€
               </span>
             </div>
-            <div
-              className="counter-container"
-              style={{ display: "flex", alignItems: "center" }}
-            >
+            <div className="counter-container">
               <i
                 className="quitar-entrada fas fa-circle-minus"
+                onClick={() => handleCounterChange("standard", -1)}
                 style={{
                   fontSize: "24px",
                   color: "rgb(239, 176, 98)",
                   cursor: "pointer",
                 }}
               ></i>
-
-              <span className="counter-number"
+              <input
+                type="number"
+                className="counter-number"
+                value={counts.standard}
+                readOnly
                 style={{
                   fontSize: "22px",
                   fontWeight: "bold",
                   color: "#3A415F",
+                  fontFamily: "Oswald, sans-serif",
+                  textAlign: "center",
+                  width: "50px",
+                  border: "1px solid #ccc",
+                  borderRadius: "4px",
                 }}
-              >
-                0
-              </span>
-
+              />
               <i
-                className=" añadir-entrada fas fa-circle-plus"
+                className="añadir-entrada fas fa-circle-plus"
+                onClick={() => handleCounterChange("standard", 1)}
                 style={{
                   fontSize: "24px",
                   color: "rgb(239, 176, 98)",
@@ -68,12 +85,13 @@ function TicketPanel() {
             </div>
           </li>
 
+          {/* VIP Pass */}
           <li className="ticket-item">
             <div className="ticket-description">
               <span
                 className="ticket-type"
                 style={{
-                  fontFamily:"Oswald, sans-serif",
+                  fontFamily: "Oswald, sans-serif",
                   fontSize: "18px",
                   fontWeight: "bold",
                   color: "#3A415F",
@@ -84,7 +102,7 @@ function TicketPanel() {
               <span
                 className="ticket-name"
                 style={{
-                  fontFamily:"Oswald, sans-serif",
+                  fontFamily: "Oswald, sans-serif",
                   fontSize: "18px",
                   fontWeight: "bold",
                   color: "#3A415F",
@@ -93,31 +111,35 @@ function TicketPanel() {
                 | 119.99€
               </span>
             </div>
-            <div
-              className="counter-container"
-              style={{ display: "flex", alignItems: "center" }}
-            >
+            <div className="counter-container">
               <i
                 className="quitar-entrada fas fa-circle-minus"
+                onClick={() => handleCounterChange("vip", -1)}
                 style={{
                   fontSize: "24px",
                   color: "rgb(239, 176, 98)",
                   cursor: "pointer",
                 }}
               ></i>
-
-              <span className="counter-number"
+              <input
+                type="number"
+                className="counter-number"
+                value={counts.vip}
+                readOnly
                 style={{
                   fontSize: "22px",
                   fontWeight: "bold",
                   color: "#3A415F",
+                  fontFamily: "Oswald, sans-serif",
+                  textAlign: "center",
+                  width: "50px",
+                  border: "1px solid #ccc",
+                  borderRadius: "4px",
                 }}
-              >
-                0
-              </span>
-
+              />
               <i
-                className=" añadir-entrada fas fa-circle-plus"
+                className="añadir-entrada fas fa-circle-plus"
+                onClick={() => handleCounterChange("vip", 1)}
                 style={{
                   fontSize: "24px",
                   color: "rgb(239, 176, 98)",
@@ -127,23 +149,24 @@ function TicketPanel() {
             </div>
           </li>
 
+          {/* Premium Pass */}
           <li className="ticket-item">
             <div className="ticket-description">
               <span
                 className="ticket-type"
                 style={{
-                  fontFamily:"Oswald, sans-serif",
+                  fontFamily: "Oswald, sans-serif",
                   fontSize: "18px",
                   fontWeight: "bold",
                   color: "#3A415F",
                 }}
               >
-                Premium Pass 
+                Premium Pass
               </span>
               <span
                 className="ticket-name"
                 style={{
-                  fontFamily:"Oswald, sans-serif",
+                  fontFamily: "Oswald, sans-serif",
                   fontSize: "18px",
                   fontWeight: "bold",
                   color: "#3A415F",
@@ -152,31 +175,35 @@ function TicketPanel() {
                 | 149.99€
               </span>
             </div>
-            <div
-              className="counter-container"
-              style={{ display: "flex", alignItems: "center" }}
-            >
+            <div className="counter-container">
               <i
                 className="quitar-entrada fas fa-circle-minus"
+                onClick={() => handleCounterChange("premium", -1)}
                 style={{
                   fontSize: "24px",
                   color: "rgb(239, 176, 98)",
                   cursor: "pointer",
                 }}
               ></i>
-
-              <span className="counter-number"
+              <input
+                type="number"
+                className="counter-number"
+                value={counts.premium}
+                readOnly
                 style={{
                   fontSize: "22px",
                   fontWeight: "bold",
                   color: "#3A415F",
+                  fontFamily: "Oswald, sans-serif",
+                  textAlign: "center",
+                  width: "50px",
+                  border: "1px solid #ccc",
+                  borderRadius: "4px",
                 }}
-              >
-                0
-              </span>
-
+              />
               <i
-                className=" añadir-entrada fas fa-circle-plus"
+                className="añadir-entrada fas fa-circle-plus"
+                onClick={() => handleCounterChange("premium", 1)}
                 style={{
                   fontSize: "24px",
                   color: "rgb(239, 176, 98)",
@@ -187,12 +214,13 @@ function TicketPanel() {
           </li>
         </ul>
 
+        {/* Botón Proceed */}
         <div className="proceed-buttom">
           <div className="ticket-description">
             <span
               className="ticket-type"
               style={{
-                fontFamily:"Oswald, sans-serif",
+                fontFamily: "Oswald, sans-serif",
                 fontSize: "24px",
                 fontWeight: "bold",
                 color: "#3A415F",
@@ -206,4 +234,5 @@ function TicketPanel() {
     </>
   );
 }
+
 export default TicketPanel;
