@@ -8,6 +8,7 @@
 .card {
     background-color: transparent;
     box-shadow: none;
+    margin-top: 25px;
 }
 
 .card-body{
