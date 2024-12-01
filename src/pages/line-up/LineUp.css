@@ -52,7 +52,7 @@
   margin-bottom: 15px;
 }
 
-/* Estilos para pantallas grandes */
+
 @media screen and (min-width: 760px) {
   .lineup-cards-grid {
     display: grid;
@@ -61,10 +61,10 @@
   }
 
   .day-column {
-    display: block; /* Mostrar todas las columnas */
+    display: block; 
   }
 
   .day-column.active {
-    display: block; /* Activo siempre en pantallas grandes */
+    display: block; 
   }
 }
