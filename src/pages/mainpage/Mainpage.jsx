@@ -28,12 +28,12 @@ function Mainpage() {
   }, []);
 
   const sliderSettings = {
-    dots: true, // Habilita los puntos debajo del slider
-    arrows: true, // Habilita las flechas predeterminadas
+    dots: true, 
+    arrows: true, 
     infinite: true,
     speed: 500,
-    slidesToShow: 2, // Máximo de 3 BandCards visibles
-    slidesToScroll: 1, // Mueve una BandCard a la vez
+    slidesToShow: 2, 
+    slidesToScroll: 1, 
     responsive: [
       {
         breakpoint: 300,
