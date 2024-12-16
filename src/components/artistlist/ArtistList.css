@@ -4,10 +4,6 @@ ol, ul {
     padding-left: 0 !important;
 }
 
-
-
-
-
 .artists-list-container {
     display: flex;
     box-sizing: border-box;
@@ -43,10 +39,6 @@ a:hover {
     color: rgba(255, 255, 255, 0.8); 
     text-decoration: underline; 
 }
-
-
-
-
 
 .gradient {
     content: '';

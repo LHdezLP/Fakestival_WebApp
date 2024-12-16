@@ -5,11 +5,11 @@ function Card({ panelImage, title, text }) {
   return (
     <div className="card" style={{ backgroundColor: "transparent" }}>
       <div className="row g-0 align-items-center">
-        {/* Imagen a la izquierda */}
+        
         <div
           className="col-md-6 order-md-1"
           style={{
-            border: "4px solid RGB(239, 176, 98)", // Pequeño marco de color
+            border: "4px solid RGB(239, 176, 98)", 
             padding: "5px",
           }}
         >
@@ -20,7 +20,7 @@ function Card({ panelImage, title, text }) {
           />
         </div>
 
-        {/* Texto a la derecha */}
+        
         <div className="col-md-6 order-md-2">
           <div className="card-body">
             <h5

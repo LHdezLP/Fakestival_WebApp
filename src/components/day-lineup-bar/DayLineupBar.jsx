@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import "./DayLineupBar.css";
 
-function DayLineupBar({  changeDay }) {
+function DayLineupBar({ changeDay }) {
   return (
     <>
       <div className="bar-container">
@@ -21,11 +21,20 @@ function DayLineupBar({  changeDay }) {
           </h5>
         </div>
         <div className="day-bar">
-          <i
-            className="flecha-izquierda fa-solid fa-circle-arrow-left"
-            style={{ color: "RGB(239, 176, 98)" }}
-            onClick={() => changeDay(-1)} 
-          ></i>
+          <button
+            className="flecha-izquierda"
+            style={{
+              background: "none",
+              border: "none",
+              cursor: "pointer",
+              color: "RGB(239, 176, 98)",
+              fontSize: "18px",
+            }}
+            onClick={() => changeDay(-1)}
+            aria-label="Cambiar al día anterior"
+          >
+            <i className="fa-solid fa-circle-arrow-left"></i>
+          </button>
           <h5
             className="text"
             style={{
@@ -39,11 +48,20 @@ function DayLineupBar({  changeDay }) {
           >
             Cambia de Fecha
           </h5>
-          <i
-            className="flecha-derecha fa-solid fa-circle-arrow-right"
-            style={{ color: "RGB(239, 176, 98)" }}
-            onClick={() => changeDay(1)} 
-          ></i>
+          <button
+            className="flecha-derecha"
+            style={{
+              background: "none",
+              border: "none",
+              cursor: "pointer",
+              color: "RGB(239, 176, 98)",
+              fontSize: "18px",
+            }}
+            onClick={() => changeDay(1)}
+            aria-label="Cambiar al día siguiente"
+          >
+            <i className="fa-solid fa-circle-arrow-right"></i>
+          </button>
         </div>
       </div>
     </>
