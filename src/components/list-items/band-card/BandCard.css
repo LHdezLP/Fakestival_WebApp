@@ -207,12 +207,12 @@ a {
 
     .artist-name {
         color: white;
-        font-size: 14px;
+        font-size: 20px;
     }
 
     .artist-type {
         color: rgb(239, 176, 98);
-        font-size: 14px;
+        font-size: 20px;
     }
 
     .gradient {

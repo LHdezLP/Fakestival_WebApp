@@ -151,6 +151,7 @@ function TicketPanel() {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+            zIndex:100000
           }}
         >
           <div
