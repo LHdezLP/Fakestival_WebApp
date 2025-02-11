@@ -2,59 +2,59 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { describe, it, expect, vi } from "vitest";
 import TicketPanel from './TicketPanel';
 
-test('abre el formulario al hacer clic en el botón "PROCEED"', () => {
-    
-    render(<TicketPanel />);
 
-    expect(screen.queryByText("Tu carro")).not.toBeInTheDocument();
-    const proceedButton = screen.getByText("PROCEED");
-    fireEvent.click(proceedButton);
-
-    expect(screen.getByText("Tu carro")).toBeInTheDocument();
-})
-
-describe("TicketPanel - Control de errores en el formulario", () => {
-    it("debe mostrar un error cuando el campo 'Nombre Completo' está vacío y se intenta enviar el formulario", () => {
-      
+  describe("TicketPanel Component", () => {
+  
+    test("el botón 'PROCEED' se habilita al seleccionar al menos un ticket", () => {
       render(<TicketPanel />);
-  
+
+      const proceedButton = screen.getByLabelText("Proceder con la compra");
       
-      fireEvent.click(screen.getByText("PROCEED"));
-  
+      expect(proceedButton).toBeDisabled();
+
+      const incrementButton = screen.getByLabelText("Aumentar Standard Pass");
       
-      const submitButton = screen.getByText("Continuar con el pago");
-  
+      fireEvent.click(incrementButton);
       
-      fireEvent.click(submitButton);
-  
-      
-      const nameInput = screen.getByLabelText("Nombre Completo");
-      expect(nameInput).toHaveAttribute("required");
-  
+      expect(proceedButton).toBeEnabled();
     });
-  });
-
-  describe('TicketPanel - Control de errores en el formulario', () => {
-    it('debe mostrar un error cuando el campo "Nombre Completo" está vacío y se intenta enviar el formulario', async () => {
-      
-      
-      vi.mock('fetch', async () => {
-        return { ok: true, json: () => ({}) };
-      });
   
+    test("abre la ventana modal al hacer clic en 'PROCEED' cuando hay tickets seleccionados", () => {
+      render(<TicketPanel />);
+      
+      const incrementButton = screen.getByLabelText("Aumentar VIP Pass");
+      const proceedButton = screen.getByLabelText("Proceder con la compra");
+      
+      fireEvent.click(incrementButton);
+      fireEvent.click(proceedButton);
+      
+      expect(screen.getByText(/tu carro/i)).toBeInTheDocument();     
+    });
+
+    test("no se puede seleccionar más de 5 tickets por tipo", () => {
       render(<TicketPanel />);
   
-      
-      fireEvent.click(screen.getByText("PROCEED"));
-  
-      
-      const submitButton = screen.getByText("Continuar con el pago");
-  
-      
-      fireEvent.click(submitButton);
-  
-      
-      const errorMessage = await screen.findByText("Complete este campo");
-      expect(errorMessage).toBeInTheDocument();
+      const inputStandard = screen.getByLabelText("Standard Pass");
+      const incrementButtonStandard = screen.getByLabelText("Aumentar Standard Pass");
+            
+      fireEvent.click(incrementButtonStandard); 
+      fireEvent.click(incrementButtonStandard); 
+      fireEvent.click(incrementButtonStandard); 
+      fireEvent.click(incrementButtonStandard); 
+      fireEvent.click(incrementButtonStandard); 
+
+      expect(inputStandard).toHaveValue(5);
+
+      fireEvent.click(incrementButtonStandard); 
+
+      expect(inputStandard).toHaveValue(5);
+
+      fireEvent.change(inputStandard, { target: { value: "6" } });
+
+      expect(inputStandard).toHaveValue(5);
+
+      fireEvent.change(inputStandard, { target: { value: "3" } });
+
+      expect(inputStandard).toHaveValue(3);
     });
   });

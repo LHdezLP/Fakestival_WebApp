@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./TicketPanel.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import BuyingForm from "../buying-form/BuyingForm";
 
 function TicketPanel() {
-  
   const [counts, setCounts] = useState({
     standard: 0,
     vip: 0,
@@ -18,17 +18,19 @@ function TicketPanel() {
     });
   };
 
+  const handleInputChange = (type, e) => {
+    const newValue = Math.min(5, Math.max(0, Number(e.target.value) || 0));
+    setCounts((prev) => ({ ...prev, [type]: newValue }));
+  };
+
   const handleProceed = () => {
-    setShowModal(true);
+    if (counts.standard + counts.vip + counts.premium > 0) {
+      setShowModal(true);
+    }
   };
 
   const handleCloseModal = () => {
     setShowModal(false);
-  };
-
-  const handleInputChange = (type, e) => {
-    const newValue = Math.min(5, Math.max(0, Number(e.target.value) || 0));
-    setCounts((prev) => ({ ...prev, [type]: newValue }));
   };
 
   const renderCounter = (type, price, label) => (
@@ -72,7 +74,9 @@ function TicketPanel() {
         >
           <i className="fas fa-circle-minus"></i>
         </button>
+        <label htmlFor={`${type}-input`} className="sr-only">{label}</label>
         <input
+          id={`${type}-input`}  // ID único para cada tipo de ticket
           type="number"
           className="counter-number"
           value={counts[type]}
@@ -115,19 +119,19 @@ function TicketPanel() {
           {renderCounter("premium", "149.99", "Premium Pass")}
         </ul>
 
-        {/* Botón Proceed */}
-        <div className="proceed-buttom" style={{cursor: "pointer"}}>
+        <div className="proceed-buttom" style={{ cursor: "pointer" }}>
           <div className="ticket-description">
             <button
               onClick={handleProceed}
+              disabled={counts.standard + counts.vip + counts.premium === 0}
               style={{
                 fontFamily: "Oswald, sans-serif",
                 fontSize: "24px",
                 fontWeight: "bold",
-                color: "#3A415F",
+                color: counts.standard + counts.vip + counts.premium === 0 ? "#ccc" : "#3A415F",
                 background: "none",
                 border: "none",
-                cursor: "pointer",
+                cursor: counts.standard + counts.vip + counts.premium === 0 ? "not-allowed" : "pointer",
               }}
               aria-label="Proceder con la compra"
             >
@@ -137,168 +141,7 @@ function TicketPanel() {
         </div>
       </div>
 
-      {/* Modal */}
-      {showModal && (
-        <div
-          style={{
-            position: "fixed",
-            top: "-20px",
-            left: 0,
-            bottom: "50px",
-            width: "100%",
-            height: "100%",
-            backgroundColor: "rgba(0, 0, 0, 0.5)",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            zIndex:100000
-          }}
-        >
-          <div
-            style={{
-              backgroundColor: "white",
-              padding: "20px",
-              borderRadius: "5px",
-              width: "80%",
-              maxWidth: "800px",
-              overflowY: "auto",
-              maxHeight: "100vh",
-              position: "relative",
-            }}
-          >
-            <button
-              className="close-modal"
-              onClick={handleCloseModal}
-              style={{
-                position: "absolute",
-                top: "10px",
-                right: "10px",
-                fontSize: "30px",
-                cursor: "pointer",
-                border: "none",
-                background: "none",
-                color: "#000",
-              }}
-            >
-              &times;
-            </button>
-            <div className="container">
-              <main>
-                <div className="row g-5">
-                  <div className="col-md-5 col-lg-4 order-md-last">
-                    <h4
-                      className="d-flex justify-content-between align-items-center mb-3"
-                      style={{
-                        color: "#f1b04a",
-                      }}
-                    >
-                      <span className="text-primary">Tu carro</span>
-                      <span className="badge bg-primary rounded-pill">
-                        {counts.standard + counts.vip + counts.premium}
-                      </span>
-                    </h4>
-                    <ul
-                      className="list-group mb-3"
-                      style={{ color: "#f1b04a" }}
-                    >
-                      {/* Lista de entradas */}
-                      {counts.standard > 0 && (
-                        <li className="list-group-item d-flex justify-content-between lh-sm">
-                          <div>
-                            <h6 className="my-0">Standard Pass</h6>
-                            <small className="text-muted">
-                              Entrada estándar
-                            </small>
-                          </div>
-                          <span className="text-muted">
-                            {counts.standard * 99.99}€
-                          </span>
-                        </li>
-                      )}
-                      {counts.vip > 0 && (
-                        <li className="list-group-item d-flex justify-content-between lh-sm">
-                          <div>
-                            <h6 className="my-0">VIP Pass</h6>
-                            <small className="text-muted">Entrada VIP</small>
-                          </div>
-                          <span className="text-muted">
-                            {counts.vip * 119.99}€
-                          </span>
-                        </li>
-                      )}
-                      {counts.premium > 0 && (
-                        <li className="list-group-item d-flex justify-content-between lh-sm">
-                          <div>
-                            <h6 className="my-0">Premium Pass</h6>
-                            <small className="text-muted">
-                              Entrada premium
-                            </small>
-                          </div>
-                          <span className="text-muted">
-                            {counts.premium * 149.99}€
-                          </span>
-                        </li>
-                      )}
-                    </ul>
-                  </div>
-                  <div className="col-md-7 col-lg-8">
-                    <form className="card p-2">
-                      <div className="row g-3">
-                        <div className="col-12">
-                          <label htmlFor="name" className="form-label">
-                            Nombre Completo
-                          </label>
-                          <input
-                            type="text"
-                            className="form-control"
-                            id="name"
-                            placeholder="Juan Perez"
-                            required
-                          />
-                        </div>
-                        <div className="col-12">
-                          <label htmlFor="email" className="form-label">
-                            Correo Electrónico
-                          </label>
-                          <input
-                            type="email"
-                            className="form-control"
-                            id="email"
-                            placeholder="juan.perez@email.com"
-                            required
-                          />
-                        </div>
-                        <div className="col-12">
-                          <label htmlFor="paymentMethod" className="form-label">
-                            Método de pago
-                          </label>
-                          <select
-                            id="paymentMethod"
-                            className="form-select"
-                            required
-                          >
-                            <option value="">Seleccionar método de pago</option>
-                            <option value="creditCard">
-                              Tarjeta de Crédito
-                            </option>
-                            <option value="paypal">PayPal</option>
-                          </select>
-                        </div>
-                      </div>
-                      <button
-                        className="w-100 btn btn-primary btn-lg"
-                        type="submit"
-                      >
-                        Continuar con el pago
-                      </button>
-                    </form>
-                  </div>
-                </div>
-              </main>
-            </div>
-          </div>
-        </div>
-      )}
+      {showModal && <BuyingForm counts={counts} handleCloseModal={handleCloseModal} />}
     </>
   );
 }
