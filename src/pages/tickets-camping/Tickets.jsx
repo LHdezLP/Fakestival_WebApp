@@ -20,9 +20,7 @@ function Tickets() {
             <TicketPanel />
           </div>
         </div>
-
         
-
         <div className="section-container">
           <img src="/img/knotfest-1161.jpg" alt="front-image" className="front-img" />
         </div>

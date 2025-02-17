@@ -76,7 +76,8 @@ function LineUp() {
               }`}
               key={day.id}
             >
-              <h4 className="day-title" style={{fontFamily:"MetalMania, sans-serif", color:"RGB(239, 176, 98)"}}>{day.day}</h4>
+              <h4 role="heading" className="day-title" style={{fontFamily:"MetalMania, sans-serif", color:"RGB(239, 176, 98)"}}>{day.day}</h4>
+
               {bands
                 .filter((band) => band["playing-day"] === day.id.toString())
                 .map((band) => (

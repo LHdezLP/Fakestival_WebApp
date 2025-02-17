@@ -3,6 +3,9 @@ import Tickets from "./pages/tickets-camping/Tickets.jsx";
 import Mainpage from "./pages/mainpage/Mainpage.jsx";
 import BandInfo from "./pages/band-info/BandInfo.jsx";
 import LineUp from "./pages/line-up/LineUp.jsx";
+import SignIn from "./components/login/signin/SignIn.jsx";
+import SignUp from "./components/login/signup/SignUp.jsx";
+import ReportPage from "./pages/report-page/ReportPage.jsx";
 
 function App() {
   return (
@@ -13,6 +16,9 @@ function App() {
         <Route path="/band-info/:id" element={<BandInfo />} />
         <Route path="*" element={<Mainpage />} />
         <Route path="/line-up" element={<LineUp />} />
+        <Route path="/sign-in" element={<SignIn/>} />
+        <Route path="/sign-up" element={<SignUp/>} />
+        <Route path="/reports" element={<ReportPage/>} />
       </Routes>
     </BrowserRouter>
   );
