@@ -55,7 +55,13 @@ function Footer() {
             </li>
             <li className="footer-separator">|</li>
             <li>
-              <Link to="/cartel">Info</Link>
+              <a
+                href="/reports"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Informes
+              </a>
             </li>
             <li className="footer-separator">|</li>
 
