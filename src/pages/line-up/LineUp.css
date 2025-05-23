@@ -11,7 +11,6 @@
   margin-top: 56px;
   margin-bottom: 61px;
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
   width: 100%;
   min-height: 100vh;
@@ -27,7 +26,8 @@
 .lineup-cards-grid {
   display: flex;
   flex-direction: column; 
-  gap: 20px;
+  position: relative;
+  align-items: center;
 }
 
 .day-column {
@@ -50,6 +50,29 @@
 
 .band-schedule-container {
   margin-bottom: 15px;
+  
+}
+
+.custom-lineup-button{
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  bottom: 0.5rem !important;
+  top: none !important;
+  width: 300px;
+  height: 40px;
+}
+
+.custom-button-text{
+  border-radius: 5px;
+  width: 100%;
+  text-align: center;
+  font-family: "MetalMania";
+  color: #272c41;
+  border: 3px solid #EFB062;
+  background-color: #EFB062;
 }
 
 

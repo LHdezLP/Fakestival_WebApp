@@ -6,30 +6,31 @@ import Footer from "../../components/footer/Footer";
 import LineupCards from "../../components/list-items/lineup-cards/LineupCards";
 import NavBar from "../../components/navbar/NavBar";
 import "./LineUp.css";
+import { Link } from "react-router-dom";
 
 function LineUp() {
   const [bands, setBands] = useState([]);
   const [days, setDays] = useState([]);
-  const [currentDayId, setCurrentDayId] = useState(1); 
+  const [currentDayId, setCurrentDayId] = useState(1);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const [bandsResponse, daysResponse] = await Promise.all([
-          fetch("/data/bands-data.json"),
+          fetch("http://localhost:8080/api/grupos"),
           fetch("/data/days-data.json"),
         ]);
 
         if (!bandsResponse.ok || !daysResponse.ok) {
-          throw new Error("Error al cargar los archivos JSON");
+          throw new Error("Error al cargar los datos");
         }
 
         const bandsData = await bandsResponse.json();
         const daysData = await daysResponse.json();
 
         const sortedBands = bandsData.sort((a, b) =>
-          a["start-time"].localeCompare(b["start-time"])
+          a.start_time.localeCompare(b.start_time)
         );
 
         setBands(sortedBands);
@@ -76,25 +77,43 @@ function LineUp() {
               }`}
               key={day.id}
             >
-              <h4 role="heading" className="day-title" style={{fontFamily:"MetalMania, sans-serif", color:"RGB(239, 176, 98)"}}>{day.day}</h4>
+              <h4
+                role="heading"
+                className="day-title"
+                style={{
+                  fontFamily: "MetalMania, sans-serif",
+                  color: "RGB(239, 176, 98)",
+                }}
+              >
+                {day.day}
+              </h4>
 
               {bands
-                .filter((band) => band["playing-day"] === day.id.toString())
+                .filter((band) => band.day.toString() === day.id.toString())
                 .map((band) => (
-                  <div className="band-schedule-container" key={band.id}>
+                  <div
+                    className="band-schedule-container"
+                    key={`${band.name}-${band.start_time}`}
+                  >
                     <LineupCards
-                      previewImage={band["preview-image"]}
-                      title={band.title}
+                      previewImage={`/img/${band.img}`}
+                      title={band.name}
                       stage={band.stage}
-                      startTime={band["start-time"]}
-                      endTime={band["end-time"]}
+                      startTime={band.start_time}
+                      endTime={band.end_time}
                     />
                   </div>
                 ))}
             </div>
           ))}
         </div>
-        <Footer />
+        <div className="custom-lineup-button">
+          <Link to="/custom-lineup" className="button-link">
+            <p className="custom-button-text">CREA TU PROPIO HORARIO</p>
+          </Link>
+        </div>
+
+        <Footer className="lineup-footer" />
       </div>
       <div className="bottom-menu">
         <BottomMenu />

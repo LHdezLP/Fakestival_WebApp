@@ -160,7 +160,7 @@ a {
     
 }
 
-@media (min-width: 760px) and (max-width: 1159px) {
+@media (min-width: 500px) and (max-width: 1023px) {
 
     .bands-list-item {
         justify-content: center;
@@ -191,18 +191,17 @@ a {
     }
 
     .artist-description {
-        
-        top: 240px;
         left: 0;
         width: 100%;
-        height: 25%;
         background: rgba(0, 0, 0, 0.6);
         display: flex;
         flex-direction: row;
         justify-content: center;
-        align-items: flex-start;
+        align-items: flex-end;
         padding: 10px;
         box-sizing: border-box;
+        height: 25%;
+        top: 7.5rem;
     }
 
     .artist-name {

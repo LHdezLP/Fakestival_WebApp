@@ -223,7 +223,7 @@ footer {
   
 }
 
-@media (min-width: 760px) and (max-width: 1159px) {
+@media (min-width: 500px) and (max-width: 1159px) {
 
   .bands-section-container {
     display: flex;

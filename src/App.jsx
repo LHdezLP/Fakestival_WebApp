@@ -6,6 +6,8 @@ import LineUp from "./pages/line-up/LineUp.jsx";
 import SignIn from "./components/login/signin/SignIn.jsx";
 import SignUp from "./components/login/signup/SignUp.jsx";
 import ReportPage from "./pages/report-page/ReportPage.jsx";
+import CustomLineUp from "./pages/line-up/children/CustomLineUp.jsx";
+import HorariosPage from "./testeo_horarios/page/HorariosPage.jsx";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
         <Route path="/sign-in" element={<SignIn/>} />
         <Route path="/sign-up" element={<SignUp/>} />
         <Route path="/reports" element={<ReportPage/>} />
+        <Route path="/custom-lineup" element={<CustomLineUp/>} />
+        <Route path="/saved-lineup" element={<HorariosPage/>} />
       </Routes>
     </BrowserRouter>
   );
