@@ -5,6 +5,7 @@ import {
   faStore,
   faBars,
   faTicket,
+  faQuestion,
 } from "@fortawesome/free-solid-svg-icons";
 import { faSpotify } from "@fortawesome/free-brands-svg-icons";
 import "./BottomMenu.css";
@@ -104,7 +105,7 @@ function BottomMenu() {
         <div className="icon" style={{ marginRight: "30px", marginTop: "3px" }}>
           <a href="/help/Bienvenidos.html" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon
-              icon={faBars}
+              icon={faQuestion}
               style={{ fontSize: "40px", color: "RGB(239, 176, 98)" }}
             />
           </a>
