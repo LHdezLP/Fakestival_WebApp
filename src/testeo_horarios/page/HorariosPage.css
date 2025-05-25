@@ -1,0 +1,116 @@
+.horarios-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 56px;
+    margin-bottom: 61px;
+}
+
+
+.bandas-horario-seleccionado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+.selected-items {
+    width: 100%;
+}
+
+.horarios-titulo {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    font-family: "MetalMania";
+    color: #EFB062;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 1rem auto;
+    width: 100%;
+    margin-bottom: 1rem;
+    gap: 1rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    margin: 0;
+    background: radial-gradient(circle,
+            rgba(255, 255, 255, 0.25) 0%,
+            rgba(0, 0, 0, 0.25) 100%);
+}
+
+.cards-grid {
+
+    margin-top: 1rem;
+}
+
+
+.button-group {
+
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: space-between;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 90%;
+    gap: 1rem;
+    max-width: 400px;
+}
+
+.bandas-header {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+}
+
+.back-button {
+    display: flex;
+    position: relative;
+    margin-left: 0.40rem;
+}
+
+.back-button .anticon-left-circle {
+
+    cursor: pointer;
+    height: 20px !important;
+    width: 20px !important;
+}
+
+
+.delete-horario-button {
+    display: flex;
+    position: relative;
+    text-align: center;
+    align-self: center;
+    justify-content: center;
+    background-color: brown;
+    color: aliceblue;
+    font-family: "MetalMania";
+    border-radius: 5px;
+
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.update-horario-button {
+    display: flex;
+    position: relative;
+    text-align: center;
+    align-self: center;
+    justify-content: center;
+    background-color: rgb(239, 176, 98);
+    color: aliceblue;
+    font-family: "MetalMania";
+    border-radius: 5px;
+
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}

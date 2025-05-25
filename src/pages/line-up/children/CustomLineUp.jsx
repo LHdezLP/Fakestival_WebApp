@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import BottomMenu from "../../../components/bottommenu/BottomMenu";
-import DayLineupBar from "../../../components/day-lineup-bar/DayLineupBar";
+import CustomLineupBar from "../../../components/day-lineup-bar/CustomLineupBar";
 import AddFloatingButtonton from "../../../components/floating-buttons/add-button/AddFloatingButton";
 import NavBar from "../../../components/navbar/NavBar";
 import BandSelector from "../../../components/modals/band-selection/BandSelector";
@@ -9,7 +9,6 @@ import CancelFloatingButtonton from "../../../components/floating-buttons/cancel
 import "./CustomLineUp.css";
 import { CheckCircleOutlined, LeftCircleOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
-
 
 function CustomLineUp() {
   const [isFinalModalOpen, setFinalModalOpen] = useState(false);
@@ -22,7 +21,8 @@ function CustomLineUp() {
   const [currentDayId, setCurrentDayId] = useState(1);
   const [selectedBands, setSelectedBands] = useState([]);
   const [currentHour, setCurrentHour] = useState("16:00");
-  const END_HOUR = "23:00";
+  const [selectedSlotIndex, setSelectedSlotIndex] = useState(null);
+  const END_HOUR = "22:00";
 
   const getNextHour = (hour) => {
     if (hour === END_HOUR) return null;
@@ -32,9 +32,16 @@ function CustomLineUp() {
     return formattedNext > END_HOUR ? null : formattedNext;
   };
 
-  const nextHour = getNextHour(currentHour);
-  const showAddButton = nextHour !== null;
-  const isScheduleComplete = currentHour === null || nextHour === null;
+  const initializeSlots = () => {
+    const slots = [];
+    let hour = "16:00";
+    while (hour <= END_HOUR) {
+      slots.push({ start_time: hour, band: null });
+      hour = getNextHour(hour);
+      if (!hour) break;
+    }
+    return slots;
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -49,6 +56,7 @@ function CustomLineUp() {
         const daysData = await daysResponse.json();
         setBands(bandsData);
         setDays(daysData);
+        setSelectedBands(initializeSlots());
       } catch (error) {
         console.error("Error al cargar los datos:", error);
       }
@@ -64,16 +72,32 @@ function CustomLineUp() {
   };
 
   const handleSelectBand = (band) => {
-    setSelectedBands((prev) => [...prev, band]);
-    if (nextHour) setCurrentHour(nextHour);
+    setSelectedBands((prev) => {
+      const newSlots = [...prev];
+      newSlots[selectedSlotIndex].band = band;
+      return newSlots;
+    });
     setModalOpen(false);
+    setSelectedSlotIndex(null);
   };
 
-  const bandsFilteredByTime = bands.filter(
-    (band) => band["start_time"] === currentHour
-  );
+  const handleRemoveBand = (index) => {
+    setSelectedBands((prev) => {
+      const newSlots = [...prev];
+      newSlots[index].band = null;
+      return newSlots;
+    });
+  };
+
+  const handleOpenModal = (index) => {
+    setSelectedSlotIndex(index);
+    setModalOpen(true);
+  };
 
   const handleFinalizeSchedule = () => {
+    const isScheduleComplete = selectedBands.every(
+      (slot) => slot.band !== null
+    );
     if (!isScheduleComplete) {
       alert("Debes completar el horario antes de guardarlo.");
     } else {
@@ -82,40 +106,42 @@ function CustomLineUp() {
   };
 
   const handleSaveSchedule = async () => {
-  const payload = {
-    name: scheduleName,
-    grupos: selectedBands.map((band) => ({ id: band.id })),
-  };
+    const payload = {
+      name: scheduleName,
+      grupos: selectedBands.map((slot) => ({
+        id: slot.band.id,
+      })),
+    };
 
-  console.log(
-    "Payload que se enviará al backend:",
-    JSON.stringify(payload, null, 2)
-  );
+    console.log(
+      "Payload que se enviará al backend:",
+      JSON.stringify(payload, null, 2)
+    );
 
-  try {
-    const response = await fetch("http://localhost:8080/api/horarios", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    });
+    try {
+      const response = await fetch("http://localhost:8080/api/horarios", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
 
-    if (response.ok) {
-      alert("Horario guardado con éxito");
-      setFinalModalOpen(false);
-      setSelectedBands([]);
-      setScheduleName("");
-      setCurrentHour("16:00");
+      if (response.ok) {
+        alert("Horario guardado con éxito");
+        setFinalModalOpen(false);
+        setSelectedBands(initializeSlots());
+        setScheduleName("");
+        setCurrentHour("16:00");
 
-      navigate("/saved-lineup");
-    } else {
-      alert("Error al guardar el horario.");
+        navigate("/saved-lineup");
+      } else {
+        alert("Error al guardar el horario.");
+      }
+    } catch (error) {
+      console.error("Error al guardar el horario:", error);
     }
-  } catch (error) {
-    console.error("Error al guardar el horario:", error);
-  }
-};
+  };
 
   return (
     <>
@@ -126,7 +152,7 @@ function CustomLineUp() {
       <div className="lineup-wrapper">
         <div className="lineup-container">
           <div className="day-lineup-container">
-            <DayLineupBar
+            <CustomLineupBar
               currentDay={days.find(
                 (day) => day.id === currentDayId.toString()
               )}
@@ -134,79 +160,100 @@ function CustomLineUp() {
             />
           </div>
 
-          <div className="selected-bands">
-            {days.map((day) => (
-              <div
-                className={`day-column ${
-                  currentDayId.toString() === day.id ? "active" : ""
-                }`}
-                key={day.id}
-              >
-                <h4
-                  role="heading"
-                  className="day-title"
-                  style={{
-                    fontFamily: "MetalMania, sans-serif",
-                    color: "RGB(239, 176, 98)",
-                  }}
-                >
-                  {day.day}
-                </h4>
-              </div>
-            ))}
+          {/* <div className="selected-bands"> */}
 
-            {selectedBands.map((band) => (
-              <LineupCards
-                previewImage={`/img/${band.img}`}
-                title={band.name}
-                stage={band.stage}
-                startTime={band.start_time}
-                endTime={band.end_time}
-              />
-            ))}
-          </div>
-
-          {showAddButton && (
-            <div className="floating-button-wrapper">
-              <button
-                className="floating-button"
-                onClick={() => setModalOpen(true)}
-              >
-                <AddFloatingButtonton />
-              </button>
+            <div className="selected-items">
+              {selectedBands.map((slot, index) => (
+                <div key={index} className="slot-container">
+                  {slot.band ? (
+                    <div className="band-card">
+                      <LineupCards
+                        previewImage={`/img/${slot.band.img}`}
+                        title={slot.band.name}
+                        stage={slot.band.stage}
+                        startTime={slot.start_time}
+                        endTime={slot.band.end_time}
+                      />
+                      <button
+                        className="remove-button"
+                        onClick={() => handleRemoveBand(index)}
+                      >
+                        <CancelFloatingButtonton />
+                      </button>
+                    </div>
+                  ) : (
+                    <div className="add-button-slot">
+                      <p className="start-time">{slot.start_time} </p>
+                      <button
+                        className="floating-button"
+                        onClick={() => handleOpenModal(index)}
+                      >
+                        <AddFloatingButtonton />
+                      </button>
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
-          )}
+          {/* </div> */}
 
           <BandSelector
             isOpen={isModalOpen}
             onClose={() => setModalOpen(false)}
           >
-            <h2 style={{ textAlign: "center" }}>Bandas a las {currentHour}</h2>
-
-            {bandsFilteredByTime.length === 0 ? (
-              <p>No hay bandas programadas a las {currentHour}.</p>
-            ) : (
-              bandsFilteredByTime.map((band, index) => (
-                <div
-                  key={band.id}
-                  onClick={() => handleSelectBand(band)}
-                  style={{ cursor: "pointer" }}
-                >
-                  <LineupCards
-                    previewImage={`/img/${band.img}`}
-                    title={band.name}
-                    stage={band.stage}
-                    startTime={band.start_time}
-                    endTime={band.end_time}
-                  />
-                  {index !== bandsFilteredByTime.length - 1 && (
-                    <p style={{ textAlign: "center", margin: "1rem 0" }}>
-                      ~ OR ~
-                    </p>
-                  )}
-                </div>
-              ))
-            )}
+            <h2 style={{ textAlign: "center" }}>
+              Bandas a las{" "}
+              {selectedSlotIndex !== null
+                ? selectedBands[selectedSlotIndex].start_time
+                : ""}
+            </h2>
+            <div className="selector-content">
+              {selectedSlotIndex !== null &&
+              bands.filter(
+                (band) =>
+                  band.start_time ===
+                  selectedBands[selectedSlotIndex].start_time
+              ).length === 0 ? (
+                <p>
+                  No hay bandas programadas a las{" "}
+                  {selectedBands[selectedSlotIndex].start_time}.
+                </p>
+              ) : (
+                selectedSlotIndex !== null &&
+                bands
+                  .filter(
+                    (band) =>
+                      band.start_time ===
+                      selectedBands[selectedSlotIndex].start_time
+                  )
+                  .map((band, index) => (
+                    <div
+                      key={band.id}
+                      onClick={() => handleSelectBand(band)}
+                      style={{ cursor: "pointer" }}
+                    >
+                      <LineupCards
+                        previewImage={`/img/${band.img}`}
+                        title={band.name}
+                        stage={band.stage}
+                        startTime={band.start_time}
+                        endTime={band.end_time}
+                      />
+                      {index !==
+                        bands.filter(
+                          (b) =>
+                            b.start_time ===
+                            selectedBands[selectedSlotIndex].start_time
+                        ).length -
+                          1 && (
+                        <p style={{ textAlign: "center", margin: "1rem 0" }}>
+                          ~ OR ~
+                        </p>
+                      )}
+                    </div>
+                  ))
+              )}
+            </div>
 
             <div style={{ textAlign: "center", marginTop: "2rem" }}>
               <button onClick={() => setModalOpen(false)}>
@@ -223,7 +270,6 @@ function CustomLineUp() {
           <button onClick={handleFinalizeSchedule}>
             <CheckCircleOutlined />
           </button>
-
         </div>
       </div>
 

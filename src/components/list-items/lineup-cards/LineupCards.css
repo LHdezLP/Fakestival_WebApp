@@ -13,6 +13,7 @@ a {
     position: relative;
     box-shadow: 0 0 0 1px rgb(239, 176, 98);
     margin-bottom: 1rem;
+    min-width: 0px;
 }
 
 .artist-link {
@@ -24,21 +25,21 @@ a {
     z-index: 2;
 }
 
-.schechdule-description {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    width: 80%;
-    position: relative;
-    height: 100%;
-    padding-left: 10px;
-    overflow: hidden;
-    z-index: 1;
-    flex-direction: column;
-
+.band-schechdule-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 500px;
+  min-width: 375px;
+  height: 70px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 0 0 1px rgb(239, 176, 98);
+  margin-bottom: 1rem;
 }
 
 .band-name {
+    display: flex;
     font-family: 'Oswald', sans-serif;
     font-size: 16px;
     margin: 0;
@@ -49,14 +50,31 @@ a {
 }
 
 .stage-name {
+    display: flex;
     font-family: 'Oswald', sans-serif;
     font-size: 14px;
     margin: 0;
     font-weight: bold;
     text-transform: uppercase;
+    text-align: right;
     z-index: 1;
     padding-left: 10px;
 }
+
+.band-name,
+.stage-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  display: block;
+}
+
+.schechdule-description {
+  width: 40%;
+  min-width: 0;
+}
+
 
 .lineup-img-container {
     align-content: flex-end;
@@ -127,4 +145,17 @@ a {
             rgba(0, 0, 0, 0.25) 100%);
     z-index: 0;
     pointer-events: none;
+}
+
+@media (max-width: 400px) {
+  .band-schechdule-container {
+    flex-direction: row;
+    width: 100%;
+    max-width: 325px;
+    min-width: 324px;
+  }
+
+  
+
+  
 }
