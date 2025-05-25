@@ -146,11 +146,14 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #EFB062;
+  font-family: "MetalMania";
   z-index: 999;
+  
 }
 
 .final-modal-content {
-  background: #fff;
+  background: linear-gradient(to bottom, #3a415f 2%, #191e34 28%);
   padding: 2rem;
   border-radius: 1rem;
   text-align: center;
@@ -163,11 +166,23 @@ button {
   padding: 0.5rem;
   margin: 1rem 0;
   font-size: 1rem;
+  color: #EFB062;
+  
+}
+
+.final-modal-content input::placeholder{
+  color: #EFB062;
 }
 
 .final-modal-buttons {
   display: flex;
   justify-content: space-around;
+}
+
+.final-modal-buttons .anticon-close-circle {
+  border-radius: 50%;
+  background-color: #EFB062;
+  color: black;
 }
 
 
