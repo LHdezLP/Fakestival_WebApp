@@ -332,10 +332,11 @@ No olvides crear los archivos `.env` si se requieren claves o URLs.
 Este manual explica cómo instalar la aplicación Fakestival (cliente y servidor) en un servidor del cliente final.
 
 **✅ Requisitos**
-* Sistema operativo: Linux (Ubuntu recomendado)
+* Sistema operativo: Windows o Linux (Ubuntu de Linux recomendado)
 * Node.js y npm instalados
 * Base de datos (MongoDB o PostgreSQL)
 * Git
+* IDE Visual Studio code y InteliJ
 
 **1. Clonar el proyecto**
 ```bash
