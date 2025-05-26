@@ -280,7 +280,14 @@ expect(mockHandleCloseModal).toHaveBeenCalledTimes(1);
 
 ---
 
-## Manual de Instalación para Desarrolladores — Fakestival
+## Manual de Instalación
+
+**✅ Requisitos**
+* Sistema operativo: Windows o Linux (Ubuntu de Linux recomendado)
+* Node.js y npm instalados
+* Base de datos (MongoDB o PostgreSQL)
+* Git
+* IDE Visual Studio code y InteliJ
 
 Este manual explica cómo instalar y ejecutar el proyecto Fakestival en local, tanto el cliente como el servidor.
 
@@ -324,96 +331,6 @@ El servidor estará en `http://localhost:4000`.
 Asegúrate de que el frontend se conecta a la URL correcta del backend (ej: `http://localhost:4000`) mediante una variable `.env` o archivo de configuración.
 
 No olvides crear los archivos `.env` si se requieren claves o URLs.
-
----
-
-## Manual de Instalación para Técnicos — Fakestival
-
-Este manual explica cómo instalar la aplicación Fakestival (cliente y servidor) en un servidor del cliente final.
-
-**✅ Requisitos**
-* Sistema operativo: Windows o Linux (Ubuntu de Linux recomendado)
-* Node.js y npm instalados
-* Base de datos (MongoDB o PostgreSQL)
-* Git
-* IDE Visual Studio code y InteliJ
-
-**1. Clonar el proyecto**
-```bash
-git clone [https://github.com/usuario/fakestival.git](https://github.com/usuario/fakestival.git)
-cd fakestival
-```
-
-**2. Instalar y ejecutar el Backend**
-```bash
-cd backend
-npm install
-```
-Crear un archivo `.env` con las siguientes variables:
-```ini
-PORT=4000
-DB_URI=mongodb://localhost:27017/fakestival
-JWT_SECRET=clave_secreta
-```
-Ejecutar el servidor:
-```bash
-npm run start
-```
-
-**3. Instalar y compilar el Frontend**
-```bash
-cd ../frontend
-npm install
-npm run build
-```
-El contenido generado en `frontend/build` se debe copiar a la carpeta pública del servidor web (por ejemplo con Nginx o Apache).
-
-**4. Acceso**
-* Frontend: `http://midominio.com`
-* Backend/API: `http://midominio.com/api` o `http://localhost:4000`
-
-**✔️ Listo**
-La aplicación estará funcionando si:
-* El frontend carga en el navegador.
-* Las funciones (comprar tickets, ver conciertos, etc.) responden correctamente.
-
----
-
-## Manual de la Persona Usuaria — Fakestival
-
-Fakestival es una aplicación web pensada para ayudarte a organizar y disfrutar al máximo tu experiencia en festivales de música. A continuación, te explicamos cómo utilizarla paso a paso.
-
-**🏠 1. Ingresar a la Aplicación**
-Abre tu navegador y accede a la dirección web que te proporcionaron (por ejemplo: `https://fakestival.com`).
-
-Puedes navegar libremente o crear una cuenta para tener una experiencia personalizada.
-
-**🔐 2. Registrarse / Iniciar Sesión**
-* Haz clic en “Iniciar sesión” o “Registrarse”.
-* Ingresa tu correo electrónico y una contraseña segura.
-* Una vez registrado, puedes iniciar sesión para acceder a tus preferencias y agenda.
-
-**🎟 3. Comprar Entradas**
-* Ve a la sección “Entradas” o “Tickets”.
-* Elige el tipo de entrada (general, VIP, etc.).
-* Completa los datos y realiza el pago.
-* Recibirás tu entrada digital que podrás descargar o mostrar desde tu perfil.
-
-**🎶 4. Ver la Programación**
-* Accede a la sección “Programación” o “Lineup”.
-* Allí verás todos los conciertos organizados por día y hora.
-* Puedes buscar por banda o por escenario.
-
-**📅 5. Crear tu Agenda Personal**
-* Desde la programación, haz clic en “Agregar a mi agenda” en los conciertos que te interesan.
-* Tu agenda personalizada se actualizará automáticamente.
-* Puedes consultarla en cualquier momento desde tu perfil.
-
-**🧑‍🎤 6. Información de las Bandas**
-En la sección de artistas, puedes hacer clic en cada banda para ver:
-* Biografía
-* Horarios
-* Escenario donde tocarán
 
 ---
 
