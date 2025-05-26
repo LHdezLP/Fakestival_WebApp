@@ -500,6 +500,18 @@ La aplicación cumple con las **WCAG (Web Content Accessibility Guidelines)**. S
    ![alt text](image-9.png)
 
 ---
+# Fakestival - Diseño Inicial
+
+Este documento contiene el enlace a los diseños iniciales (mockups y prototipos) del proyecto Fakestival.
+
+## Diseño Inicial: Mockups y Prototipado
+
+Puedes acceder a los diseños iniciales del proyecto a través del siguiente enlace de Figma:
+
+[Figma Project - Music Festival](https://www.figma.com/design/AelGhOyxnH1tlEg3D499wQ/Figma-Project---Music-Festival?node-id=0-1&t=BipHCiUFlXk6aD1s-1)
+
+**Contenido del Enlace:**
+---
 
 # Fakestival - Tu Portal Integral para el Festival
 
