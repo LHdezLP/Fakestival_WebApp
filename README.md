@@ -500,6 +500,15 @@ La aplicación cumple con las **WCAG (Web Content Accessibility Guidelines)**. S
    ![alt text](image-9.png)
 
 ---
+# Fakestival - Gestión de Tareas y Planificación del Proyecto
+
+En Fakestival, la organización y el seguimiento del desarrollo son fundamentales. Nos coordinamos de manera continua a través de discusiones y reuniones, pero también utilizamos activamente GitHub y un sistema de planificación visual para asegurar un flujo de trabajo eficiente y transparente.
+
+## Gestión de Tareas con GitHub y Sistema de Planificación
+
+Como se puede observar en la captura de pantalla, empleamos un sistema de planificación visual integrado directamente en GitHub (o conectado a él). Este sistema nos permite:
+
+---
 # Fakestival - Diseño Inicial
 
 Este documento contiene el enlace a los diseños iniciales (mockups y prototipos) del proyecto Fakestival.
@@ -510,7 +519,6 @@ Puedes acceder a los diseños iniciales del proyecto a través del siguiente enl
 
 [Figma Project - Music Festival](https://www.figma.com/design/AelGhOyxnH1tlEg3D499wQ/Figma-Project---Music-Festival?node-id=0-1&t=BipHCiUFlXk6aD1s-1)
 
-**Contenido del Enlace:**
 ---
 
 # Fakestival - Tu Portal Integral para el Festival
