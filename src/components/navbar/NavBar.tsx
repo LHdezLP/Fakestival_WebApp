@@ -5,17 +5,17 @@ import React, { useRef, useState, useEffect } from "react";
 
 function NavBar() {
   const [showForm, setShowForm] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Estado para la sesión
+  const [isLoggedIn, setIsLoggedIn] = useState(false); 
   const [showOptions, setShowOptions] = useState(false);
 
-  // Especifica el tipo de elemento HTML para cada ref
+  
   const formRef = useRef<HTMLDivElement>(null);
   const optionsRef = useRef<HTMLDivElement>(null);
-  const iconRef = useRef<HTMLSpanElement>(null); // UserOutlined de antd suele renderizar un <span>
+  const iconRef = useRef<HTMLSpanElement>(null); 
 
   const onFinish = (values: any) => {
     console.log("Success:", values);
-    setIsLoggedIn(true); // Simula el inicio de sesión
+    setIsLoggedIn(true); 
     setShowForm(false);
     setShowOptions(true);
   };
@@ -125,10 +125,10 @@ function NavBar() {
             </div>
           </div>
 
-          {/* Ícono con formulario y opciones */}
+          
           <div className="icono" style={{ display: "flex", position: "relative" }}>
             <UserOutlined
-              ref={iconRef} // Asigna la ref al icono
+              ref={iconRef} 
               style={{
                 fontSize: "35px",
                 color: "RGB(239, 176, 98)",
@@ -148,7 +148,7 @@ function NavBar() {
 
             {showForm && !showOptions && (
               <div
-                ref={formRef} // Asigna la ref al div del formulario
+                ref={formRef} 
                 style={{
                   position: "absolute",
                   top: "45px",
@@ -202,7 +202,7 @@ function NavBar() {
 
             {showOptions && (
               <div
-                ref={optionsRef} // Asigna la ref al div de opciones
+                ref={optionsRef} 
                 style={{
                   position: "absolute",
                   top: "45px",
@@ -223,7 +223,7 @@ function NavBar() {
                   style={{ width: "100%", marginBottom: "0.5rem" }}
                   onClick={() => {
                     console.log("Logout clicked");
-                    setIsLoggedIn(false); // Simula el cierre de sesión
+                    setIsLoggedIn(false); 
                     setShowOptions(false);
                   }}
                 >
@@ -233,7 +233,7 @@ function NavBar() {
                   type="primary"
                   style={{ width: "100%" }}
                   onClick={() => {
-                    window.location.href = "/line-up";
+                    window.location.href = "/saved-lineup";
                     console.log("Administrar calendario personalizado");
                     setShowOptions(false);
                   }}
