@@ -174,6 +174,265 @@ Grupos: ( _id_banda_ , name , stage , start_time , end_time , set_time , day , i
 Horarios_Bandas: ( _id_horario_ * , _id_banda_ * , PRIMARY KEY (_id_horario_, _id_banda_) , FOREIGN KEY (_id_horario_) REFERENCES horario(_id_horario) , FOREIGN KEY (_id_banda_) REFERENCES grupos(_id_banda) )
 
 ---
+```markdown
+# Fakestival - README
+
+Este archivo README proporciona información general sobre el proyecto Fakestival, incluyendo las pruebas unitarias del componente `<BuyingForm>`, manuales de instalación para desarrolladores y técnicos, un manual de usuario y la pila tecnológica utilizada.
+
+## Pruebas Unitarias del Componente `<BuyingForm>`
+
+Este bloque de pruebas se centra en la funcionalidad del componente `<BuyingForm>`.
+
+**Descripción del Conjunto de Pruebas:** "BuyingForm Component" - Indica que las pruebas dentro de este bloque están dedicadas al componente `<BuyingForm>`.
+
+**Importaciones:**
+```javascript
+import { render, screen, fireEvent } from '@testing-library/react';
+import BuyingForm from '../path/to/BuyingForm'; // Asegúrate de actualizar la ruta correcta
+```
+
+**Variables de Configuración:**
+```javascript
+const mockHandleCloseModal = vi.fn();
+const mockCounts = { standard: 1, vip: 2, premium: 0 };
+```
+
+```javascript
+beforeEach(() => {
+  vi.clearAllMocks();
+});
+```
+
+### Prueba 1: muestra la información de los tickets seleccionados correctamente
+![Sin título](https://github.com/user-attachments/assets/67f5651d-e09e-4930-ba24-727d5ec5a0db)
+
+**Acciones:**
+```javascript
+render(<BuyingForm counts={mockCounts} handleCloseModal={mockHandleCloseModal} />);
+```
+
+**Verificaciones:**
+```javascript
+expect(screen.getByText("Standard Pass x1")).toBeInTheDocument();
+expect(screen.getByText("VIP Pass x2")).toBeInTheDocument();
+expect(screen.queryByText("Premium Pass")).not.toBeInTheDocument();
+expect(screen.getByText("339.97€")).toBeInTheDocument();
+```
+
+**Resumen:** Esta prueba verifica que el componente `<BuyingForm>` renderiza correctamente la información sobre los tickets seleccionados (cantidad y tipo) y el precio total, basándose en las props `counts` que se le pasan.
+
+### Prueba 2: muestra mensajes de error si se envía un formulario vacío
+![Sin título](https://github.com/user-attachments/assets/ebcdfd36-42df-42f5-9841-016d56c6137e)
+
+**Acciones:**
+```javascript
+render(<BuyingForm counts={mockCounts} handleCloseModal={mockHandleCloseModal} />);
+const submitButton = screen.getByText("Continuar con el pago");
+fireEvent.click(submitButton);
+```
+
+**Verificaciones:**
+```javascript
+expect(screen.getByText("El nombre es obligatorio.")).toBeInTheDocument();
+expect(screen.getByText("El correo electrónico es obligatorio.")).toBeInTheDocument();
+expect(screen.getByText("Selecciona un método de pago.")).toBeInTheDocument();
+```
+
+**Resumen:** Esta prueba verifica que al intentar enviar el formulario sin completar los campos obligatorios (nombre, correo electrónico y método de pago), se muestran los correspondientes mensajes de error de validación.
+
+### Prueba 3: Informa al usuario del formato de email esperado si se ha introducido uno incorrecto
+![Sin título](https://github.com/user-attachments/assets/da35ca95-78dc-4364-9051-0ff0f105c162)
+
+**Acciones:**
+```javascript
+render(<BuyingForm counts={mockCounts} handleCloseModal={mockHandleCloseModal} />);
+fireEvent.change(screen.getByPlaceholderText("juan.perez@email.com"), { target: { value: "pepito mail.com" } });
+const submitButton = screen.getByText("Continuar con el pago");
+fireEvent.click(submitButton);
+```
+
+**Verificaciones:**
+```javascript
+expect(screen.getByText("Por favor, introduce un correo válido. Ejemplo: persona@algo.com")).toBeInTheDocument();
+```
+
+**Resumen:** Esta prueba verifica que si el usuario introduce un formato de correo electrónico inválido y envía el formulario, se muestra un mensaje de error informándole sobre el formato esperado.
+
+### Prueba 4: cierra el modal al completar el formulario correctamente
+![Sin título](https://github.com/user-attachments/assets/686a08fe-5d00-4519-9afa-04c18e6919fb)
+
+**Acciones:**
+```javascript
+render(<BuyingForm counts={mockCounts} handleCloseModal={mockHandleCloseModal} />);
+fireEvent.change(screen.getByPlaceholderText("Juan Perez"), { target: { value: "Juan Perez" } });
+fireEvent.change(screen.getByPlaceholderText("juan.perez@email.com"), { target: { value: "juan.perez@email.com" } });
+fireEvent.change(screen.getByLabelText("Método de pago"), { target: { value: "creditCard" } });
+const submitButton = screen.getByText("Continuar con el pago");
+fireEvent.click(submitButton);
+```
+
+**Verificaciones:**
+```javascript
+expect(mockHandleCloseModal).toHaveBeenCalledTimes(1);
+```
+
+**Resumen:** Esta prueba verifica que cuando el formulario dentro del componente `<BuyingForm>` se completa con datos válidos y se envía, la función `handleCloseModal` proporcionada como prop se llama una vez, lo que se interpreta como el cierre exitoso del modal.
+
+---
+
+## Manual de Instalación para Desarrolladores — Fakestival
+
+Este manual explica cómo instalar y ejecutar el proyecto Fakestival en local, tanto el cliente como el servidor.
+
+**📁 1. Clonar el repositorio**
+```bash
+git clone [https://github.com/usuario/fakestival.git](https://github.com/usuario/fakestival.git)
+cd fakestival
+```
+
+**🌐 2. Instalar el Frontend**
+Ve a la carpeta del cliente:
+```bash
+cd frontend
+```
+Instala las dependencias:
+```bash
+npm install
+```
+Ejecuta la app:
+```bash
+npm start
+```
+Por defecto se abre en `http://localhost:3000`.
+
+**🔧 3. Instalar el Backend**
+En otra terminal, ve a la carpeta del servidor:
+```bash
+cd backend
+```
+Instala las dependencias:
+```bash
+npm install
+```
+Ejecuta el servidor:
+```bash
+npm run dev
+```
+El servidor estará en `http://localhost:4000`.
+
+**✅ 4. Notas**
+Asegúrate de que el frontend se conecta a la URL correcta del backend (ej: `http://localhost:4000`) mediante una variable `.env` o archivo de configuración.
+
+No olvides crear los archivos `.env` si se requieren claves o URLs.
+
+---
+
+## Manual de Instalación para Técnicos — Fakestival
+
+Este manual explica cómo instalar la aplicación Fakestival (cliente y servidor) en un servidor del cliente final.
+
+**✅ Requisitos**
+* Sistema operativo: Linux (Ubuntu recomendado)
+* Node.js y npm instalados
+* Base de datos (MongoDB o PostgreSQL)
+* Git
+
+**1. Clonar el proyecto**
+```bash
+git clone [https://github.com/usuario/fakestival.git](https://github.com/usuario/fakestival.git)
+cd fakestival
+```
+
+**2. Instalar y ejecutar el Backend**
+```bash
+cd backend
+npm install
+```
+Crear un archivo `.env` con las siguientes variables:
+```ini
+PORT=4000
+DB_URI=mongodb://localhost:27017/fakestival
+JWT_SECRET=clave_secreta
+```
+Ejecutar el servidor:
+```bash
+npm run start
+```
+
+**3. Instalar y compilar el Frontend**
+```bash
+cd ../frontend
+npm install
+npm run build
+```
+El contenido generado en `frontend/build` se debe copiar a la carpeta pública del servidor web (por ejemplo con Nginx o Apache).
+
+**4. Acceso**
+* Frontend: `http://midominio.com`
+* Backend/API: `http://midominio.com/api` o `http://localhost:4000`
+
+**✔️ Listo**
+La aplicación estará funcionando si:
+* El frontend carga en el navegador.
+* Las funciones (comprar tickets, ver conciertos, etc.) responden correctamente.
+
+---
+
+## Manual de la Persona Usuaria — Fakestival
+
+Fakestival es una aplicación web pensada para ayudarte a organizar y disfrutar al máximo tu experiencia en festivales de música. A continuación, te explicamos cómo utilizarla paso a paso.
+
+**🏠 1. Ingresar a la Aplicación**
+Abre tu navegador y accede a la dirección web que te proporcionaron (por ejemplo: `https://fakestival.com`).
+
+Puedes navegar libremente o crear una cuenta para tener una experiencia personalizada.
+
+**🔐 2. Registrarse / Iniciar Sesión**
+* Haz clic en “Iniciar sesión” o “Registrarse”.
+* Ingresa tu correo electrónico y una contraseña segura.
+* Una vez registrado, puedes iniciar sesión para acceder a tus preferencias y agenda.
+
+**🎟 3. Comprar Entradas**
+* Ve a la sección “Entradas” o “Tickets”.
+* Elige el tipo de entrada (general, VIP, etc.).
+* Completa los datos y realiza el pago.
+* Recibirás tu entrada digital que podrás descargar o mostrar desde tu perfil.
+
+**🎶 4. Ver la Programación**
+* Accede a la sección “Programación” o “Lineup”.
+* Allí verás todos los conciertos organizados por día y hora.
+* Puedes buscar por banda o por escenario.
+
+**📅 5. Crear tu Agenda Personal**
+* Desde la programación, haz clic en “Agregar a mi agenda” en los conciertos que te interesan.
+* Tu agenda personalizada se actualizará automáticamente.
+* Puedes consultarla en cualquier momento desde tu perfil.
+
+**🧑‍🎤 6. Información de las Bandas**
+En la sección de artistas, puedes hacer clic en cada banda para ver:
+* Biografía
+* Horarios
+* Escenario donde tocarán
+
+---
+
+## Pila Tecnológica
+
+**Web/App**
+* Typescript
+* Javascript
+* CSS
+* HTML
+* React
+* Firebase
+
+---
+
+## Ayuda al Usuario Dentro de la App
+
+Si se selecciona el icono de interrogante dentro de la aplicación, se abrirá un sistema de ayuda para el usuario que describe el funcionamiento del sistema con imágenes.
+![image](https://github.com/user-attachments/assets/360f7763-c6f4-4614-a2c6-387006f86741)
+![image](https://github.com/user-attachments/assets/a8ed30ad-579c-4a7d-82b8-9cf0addd1e6d)
 
 ## Casos de Uso
 
