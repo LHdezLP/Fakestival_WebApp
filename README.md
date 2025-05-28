@@ -280,6 +280,36 @@ expect(mockHandleCloseModal).toHaveBeenCalledTimes(1);
 
 ---
 
+![image](https://github.com/user-attachments/assets/3c962b8d-9477-4b91-91f2-27f3b82eb19d)
+Esta imagen muestra donde se puede iniciar sesión o registrarte en caso de no estarlo
+
+![image](https://github.com/user-attachments/assets/14cdfa8f-fc32-4203-97dc-0fb7882e18fe)
+en caso de estarlo se mostrará este modal para acceder al calendario o cerrar sesión
+
+
+![image](https://github.com/user-attachments/assets/fcac81a9-a2f6-407f-b44c-0fa65be91966)
+1. El apartado señalado nos permitirá elegir el día que queramos y ver las bandas que 
+tocarán ese día.
+2. Esto nos mostrará en qué día estamos situados en el calendario del evento.
+3. Ya aquí podremos ver la información de la banda en el evento tanto el nombre de la banda, el lugar en el que toca dentro del festival y
+también la hora a la que empieza y acaba su turno.
+
+
+
+![image](https://github.com/user-attachments/assets/07061567-6ce1-4fdf-9a7a-15e78b6c91bc)
+
+1.  En esta selección de cantidad de entradas podremos comprar desde 1 hasta 5 entradas como máximo.
+2.  Existen tres tipos de entradas diferentes para comprar una estándar, un pase vip y un pase premium.
+3.  Y en el botón señalado ya pasaremos a proceder a la compra accediendo al carrito para finalizar la compra.
+
+
+![image](https://github.com/user-attachments/assets/20fcb686-a3f4-4935-b67e-61f0c6105859)
+1.  Aquí se colocará el nombre del comprador.
+2.  Aquí el correo electrónico del comprador.
+3.  En este apartado se seleccionará el método con el que queremos hacer la compra.
+
+---
+
 ## Manual de Instalación
 
 **✅ Requisitos**
