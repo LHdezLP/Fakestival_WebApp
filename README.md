@@ -279,6 +279,7 @@ expect(mockHandleCloseModal).toHaveBeenCalledTimes(1);
 **Resumen:** Esta prueba verifica que cuando el formulario dentro del componente `<BuyingForm>` se completa con datos válidos y se envía, la función `handleCloseModal` proporcionada como prop se llama una vez, lo que se interpreta como el cierre exitoso del modal.
 
 ---
+## Manual de usuario
 
 ![image](https://github.com/user-attachments/assets/3c962b8d-9477-4b91-91f2-27f3b82eb19d)
 Esta imagen muestra donde se puede iniciar sesión o registrarte en caso de no estarlo
@@ -295,7 +296,7 @@ tocarán ese día.
 también la hora a la que empieza y acaba su turno.
 
 
-
+** (Implementado en Angular y ha sido evaluado anteriormente en el curso) **
 ![image](https://github.com/user-attachments/assets/07061567-6ce1-4fdf-9a7a-15e78b6c91bc)
 
 1.  En esta selección de cantidad de entradas podremos comprar desde 1 hasta 5 entradas como máximo.
